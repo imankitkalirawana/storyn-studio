@@ -11,7 +11,7 @@ export const Hero = () => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full bg-white text-black flex flex-col items-center justify-center overflow-hidden px-4 py-20"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 py-20"
     >
       {/* Background/Floating Elements Area */}
       <div className="relative w-full max-w-7xl h-full flex flex-col items-center justify-center z-10">
@@ -19,7 +19,7 @@ export const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 w-full mb-4">
           {/* Left Image (Graffiti) */}
           <motion.div
-            className="hidden md:block w-48 h-32 rounded-2xl overflow-hidden border-2 border-black/10 -rotate-6 relative"
+            className="hidden md:block w-48 h-32 rounded-2xl overflow-hidden border-2 border-foreground/10 -rotate-6 relative"
             initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
             animate={{ opacity: 1, scale: 1, rotate: -6 }}
             transition={{ duration: 0.8 }}
@@ -35,13 +35,13 @@ export const Hero = () => {
             />
           </motion.div>
 
-          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20 text-black">
+          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20">
             Brands
           </h1>
 
           {/* Right Image (Portrait) */}
           <motion.div
-            className="hidden md:block w-40 h-56 rounded-full overflow-hidden border-2 border-black/10 rotate-[6deg] translate-y-8 relative"
+            className="hidden md:block w-40 h-56 rounded-full overflow-hidden border-2 border-foreground/10 rotate-6 translate-y-8 relative"
             initial={{ opacity: 0, scale: 0.8, rotate: 15 }}
             animate={{ opacity: 1, scale: 1, rotate: 6 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -62,14 +62,14 @@ export const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 w-full relative">
           {/* Pink Starburst */}
           <motion.div
-            className="absolute left-[10%] -top-12 md:relative md:left-auto md:top-auto w-24 h-24 text-pink-500 z-0"
+            className="absolute left-[10%] -top-12 md:relative md:left-auto md:top-auto w-24 h-24 text-accent z-0"
             animate={{ rotate: 360 }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           >
             <Starburst className="w-full h-full drop-shadow-[0_4px_10px_rgba(236,72,153,0.3)]" />
           </motion.div>
 
-          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20 flex items-center gap-4 text-black">
+          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20 flex items-center gap-4">
             <span className="font-serif italic font-light">&</span> Products
           </h1>
 
