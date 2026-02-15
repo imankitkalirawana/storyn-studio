@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+@keyframes moving-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-moving-horizontal {
+  animation: moving-horizontal 10s linear infinite;
+}
+
 /*
  * HeroUI Theme Customization
  * Add this to your global.css after importing @heroui/styles

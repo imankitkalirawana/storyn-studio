@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Play } from "lucide-react";
 import { Starburst, SpikyCircle, Flower } from "./stickers";
 import Image from "next/image";
+import MovingStrip from "./moving-strip";
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,77 +15,83 @@ export const Hero = () => {
       className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 py-20"
     >
       {/* Background/Floating Elements Area */}
-      <div className="relative w-full max-w-7xl h-full flex flex-col items-center justify-center z-10">
+      <div className="relative w-full  h-full flex flex-col items-center justify-center z-10">
         {/* Row 1: Images & "Brands" */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12 w-full mb-4">
-          {/* Left Image (Graffiti) */}
-          <motion.div
-            className="hidden md:block w-48 h-32 rounded-2xl overflow-hidden border-2 border-foreground/10 -rotate-6 relative"
-            initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
-            animate={{ opacity: 1, scale: 1, rotate: -6 }}
-            transition={{ duration: 0.8 }}
-            drag
-            dragConstraints={containerRef}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1769613758100-a5d12762b1ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFmZml0aSUyMG11cmFsJTIwYXJ0JTIwY29sb3JmdWx8ZW58MXx8fHwxNzcwMDI1NTQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Graffiti"
-              fill
-              className="object-cover"
-              sizes="192px"
-            />
-          </motion.div>
+        <div className="flex  flex-col w-full pt-10 pb-32 ">
+          <div className="flex flex-col md:flex-row items-end justify-center gap-4 md:gap-12 w-full ">
+            {/* Left Image (Graffiti) */}
+            <motion.div
+              className="hidden md:block w-60 h-40 self-center rounded-2xl overflow-hidden border-2 border-foreground/10 -rotate-6   relative"
+              initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
+              animate={{ opacity: 1, scale: 1, rotate: -6 }}
+              transition={{ duration: 0.8 }}
+              drag
+              dragConstraints={containerRef}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1769613758100-a5d12762b1ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncmFmZml0aSUyMG11cmFsJTIwYXJ0JTIwY29sb3JmdWx8ZW58MXx8fHwxNzcwMDI1NTQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Graffiti"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 192px"
+              />
+            </motion.div>
 
-          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20">
-            Brands
-          </h1>
+            <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20">
+              Brands
+            </h1>
 
-          {/* Right Image (Portrait) */}
-          <motion.div
-            className="hidden md:block w-40 h-56 rounded-full overflow-hidden border-2 border-foreground/10 rotate-6 translate-y-8 relative"
-            initial={{ opacity: 0, scale: 0.8, rotate: 15 }}
-            animate={{ opacity: 1, scale: 1, rotate: 6 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            drag
-            dragConstraints={containerRef}
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1747767807272-e91bc322065f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMHN0cmVldCUyMGFydCUyMHBvcnRyYWl0JTIwY29sb3JmdWx8ZW58MXx8fHwxNzcwMDI1NTQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Urban"
-              fill
-              className="object-cover"
-              sizes="160px"
-            />
-          </motion.div>
+            {/* Right Image (Portrait) */}
+            <motion.div
+              className="hidden md:block w-40 h-56 rounded-full overflow-hidden border-2 border-foreground/10 rotate-6 translate-y-12 relative"
+              initial={{ opacity: 0, scale: 0.8, rotate: 15 }}
+              animate={{ opacity: 1, scale: 1, rotate: 6 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              dragConstraints={containerRef}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1747767807272-e91bc322065f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMHN0cmVldCUyMGFydCUyMHBvcnRyYWl0JTIwY29sb3JmdWx8ZW58MXx8fHwxNzcwMDI1NTQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Urban"
+                fill
+                className="object-cover"
+                sizes="160px"
+              />
+            </motion.div>
+          </div>
+          <div className="flex items-center justify-center">
+            <span className="text-7xl font-serif font-bold italic text-accent">
+              &
+            </span>
+          </div>
+
+          {/* Row 2: Star, "& Products", Flower */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 w-full relative">
+            {/* Pink Starburst */}
+            <motion.div
+              className="absolute left-[10%] -top-12 md:relative md:left-auto md:top-auto w-32 h-32 text-accent z-0"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <Starburst className="w-full h-full drop-shadow-[0_4px_10px_rgba(236,72,153,0.3)]" />
+            </motion.div>
+
+            <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20 flex items-center gap-4">
+              Products
+            </h1>
+
+            {/* Play Button Pill (Holographic Flower) */}
+            <motion.button
+              className="hidden md:block w-20 h-20 hover:scale-110 transition-transform"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            >
+              <Flower className="w-full h-full drop-shadow-xl" />
+            </motion.button>
+          </div>
         </div>
-
-        {/* Row 2: Star, "& Products", Flower */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 w-full relative">
-          {/* Pink Starburst */}
-          <motion.div
-            className="absolute left-[10%] -top-12 md:relative md:left-auto md:top-auto w-24 h-24 text-accent z-0"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          >
-            <Starburst className="w-full h-full drop-shadow-[0_4px_10px_rgba(236,72,153,0.3)]" />
-          </motion.div>
-
-          <h1 className="text-7xl md:text-9xl font-bold tracking-tighter z-20 flex items-center gap-4">
-            <span className="font-serif italic font-light">&</span> Products
-          </h1>
-
-          {/* Play Button Pill (Holographic Flower) */}
-          <motion.button
-            className="hidden md:block w-20 h-20 hover:scale-110 transition-transform"
-            animate={{ rotate: -360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          >
-            <Flower className="w-full h-full drop-shadow-xl" />
-          </motion.button>
-        </div>
-
+        <MovingStrip />
         {/* Bottom Area */}
-        <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-7xl">
           {/* Music Card */}
           <motion.div
             className="bg-white rounded-3xl p-4 flex flex-col gap-4 max-w-xs mx-auto md:mx-0 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100"
