@@ -3,12 +3,16 @@ import { Hero } from "@/components/homepage/hero";
 import { Intersection } from "@/components/homepage/inter-section";
 import { StorySection } from "@/components/homepage/story-section";
 import { WorkList } from "@/components/homepage/work-list";
+import AboutUs from "@/components/homepage/about-us";
+import MovingStrip from "@/components/homepage/moving-strip";
 
 export default function Home() {
   return (
     <>
       <main>
         <Hero />
+        <MovingStrip />
+        <AboutUs />
         <Intersection />
         <WorkList />
         <StorySection />

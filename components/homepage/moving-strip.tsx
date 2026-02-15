@@ -25,7 +25,7 @@ function StripItem({ text }: { text: string }) {
       >
         <path
           d="M16.3832 0.783373L21.6154 12.8665L34.1086 17.0257L22.0254 22.2578L17.8663 34.751L12.6341 22.6679L0.140944 18.5087L12.2241 13.2765L16.3832 0.783373Z"
-          fill="#F6339A"
+          fill="#FB6514"
         />
       </svg>
     </div>
@@ -41,7 +41,7 @@ export default function MovingStrip() {
   ).flat();
 
   return (
-    <div className="bg-foreground py-7 ">
+    <div className="bg-[#FB6514] py-7 ">
       <div className="relative -rotate-2 overflow-hidden flex w-full h-[48px] bg-background rounded-xl items-center justify-center group">
         <div className="h-fit">
           <div
