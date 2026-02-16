@@ -5,6 +5,7 @@ import { StorySection } from "@/components/homepage/story-section";
 import { WorkList } from "@/components/homepage/work-list";
 import AboutUs from "@/components/homepage/about-us";
 import MovingStrip from "@/components/homepage/moving-strip";
+import Testimonial from "@/components/homepage/testimonial";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Intersection />
         <WorkList />
         <StorySection />
+        <Testimonial />
         <Footer />
       </main>
     </>
