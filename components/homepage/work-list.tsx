@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Project, projects } from "@/data/projects";
+import { Chip } from "@heroui/react";
 
 export const WorkList = ({
   onProjectSelect,
@@ -40,14 +41,14 @@ export const WorkList = ({
   return (
     <section
       ref={containerRef}
-      className="bg-white py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
+      className="py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
     >
       <div className="max-w-[1920px] mx-auto">
         {/* Header - Fixed/Sticky feel or just top placement */}
         <div className="flex flex-col items-center justify-center mb-24 text-center">
-          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter text-black leading-[0.85]">
+          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
             Selected <br />
-            <span className="text-gray-300">Work.</span>
+            <span className="text-default">Work</span>
           </h2>
         </div>
 
@@ -120,18 +121,18 @@ const Card = ({
       />
 
       {/* Sticker/Pill Overlay */}
-      <div className="absolute top-4 left-4 right-4 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-black shadow-lg">
+      <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+        <Chip className="bg-background/50 backdrop-blur-lg px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all text-xs font-bold uppercase tracking-widest text-foreground shadow-lg">
           {project.category}
-        </div>
+        </Chip>
         <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center shadow-lg">
           <ArrowUpRight size={18} />
         </div>
       </div>
 
       {/* Bottom Title */}
-      <div className="absolute bottom-6 left-6">
-        <h3 className="text-2xl font-bold text-white drop-shadow-md translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+      <div className="absolute p-4 w-full bottom-0 bg-linear-to-t from-foreground opacity-0  group-hover:opacity-100 to-transparent transition-all">
+        <h3 className="text-2xl font-bold text-background drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-all duration-300">
           {project.title}
         </h3>
       </div>

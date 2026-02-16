@@ -1,7 +1,7 @@
 "use client";
 import { CaseStudy } from "@/components/projects";
 import { useEffect } from "react";
-import { projects } from "@/components/homepage/work-list";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
   // Smooth scroll behavior for the html element
