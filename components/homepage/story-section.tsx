@@ -25,9 +25,9 @@ const storySteps: StoryStep[] = [
 
 const team: TeamMember[] = [
   {
-    name: "Elena Vosk",
-    role: "Founder & Creative Director",
-    img: "https://images.unsplash.com/photo-1761429942613-8d36f33dea5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0JTIwbWluaW1hbGlzdCUyMHN0dWRpbyUyMGxpZ2h0aW5nJTIwd29tYW58ZW58MXx8fHwxNzcwMDMwNTczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Ankit Kalirawana",
+    role: "Father of Co-Founder",
+    img: "/assets/ankit.jpg",
   },
   {
     name: "Marcus Chen",

@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-type Project = {
+export type Project = {
   id: number;
   title: string;
   category: string;
@@ -12,7 +12,7 @@ type Project = {
   height: string;
 };
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     id: 1,
     title: "Vogue Editorial",
@@ -71,7 +71,11 @@ const projects: Project[] = [
   },
 ];
 
-export const WorkList = () => {
+export const WorkList = ({
+  onProjectSelect,
+}: {
+  onProjectSelect?: (project: Project) => void;
+}) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -121,9 +125,20 @@ export const WorkList = () => {
             className="flex flex-col gap-12 md:gap-24 pt-0"
           >
             {col1.map((project, i) => (
-              <Card key={`c1-${i}`} project={project} />
+              <Card
+                key={`c1-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
             ))}
             {/* Duplicate for length/feeling */}
+            {col1.map((project, i) => (
+              <Card
+                key={`c1-dup-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
+            ))}
           </motion.div>
 
           {/* Column 2 - Offset Start */}
@@ -132,7 +147,18 @@ export const WorkList = () => {
             className="flex flex-col gap-12 md:gap-24 pt-24 md:pt-48"
           >
             {col2.map((project, i) => (
-              <Card key={`c2-${i}`} project={project} />
+              <Card
+                key={`c2-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
+            ))}
+            {col2.map((project, i) => (
+              <Card
+                key={`c2-dup-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
             ))}
           </motion.div>
 
@@ -142,7 +168,18 @@ export const WorkList = () => {
             className="hidden md:flex flex-col gap-12 md:gap-24 pt-12"
           >
             {col3.map((project, i) => (
-              <Card key={`c3-${i}`} project={project} />
+              <Card
+                key={`c3-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
+            ))}
+            {col3.map((project, i) => (
+              <Card
+                key={`c3-dup-${i}`}
+                project={project}
+                onClick={() => onProjectSelect?.(project)}
+              />
             ))}
           </motion.div>
         </div>
@@ -151,10 +188,17 @@ export const WorkList = () => {
   );
 };
 
-const Card = ({ project }: { project: Project }) => {
+const Card = ({
+  project,
+  onClick,
+}: {
+  project: Project;
+  onClick?: () => void;
+}) => {
   return (
     <div
       className={`relative group w-full ${project.height} rounded-[2rem] overflow-hidden`}
+      onClick={onClick}
     >
       <Image
         src={project.img}
