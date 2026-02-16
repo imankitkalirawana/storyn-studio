@@ -3,73 +3,8 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-
-export type Project = {
-  id: number;
-  title: string;
-  category: string;
-  img: string;
-  height: string;
-};
-
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Vogue Editorial",
-    category: "Fashion",
-    img: "/assets/projects/cargex.png",
-    height: "h-64 md:h-80",
-  },
-  {
-    id: 2,
-    title: "Neo Tokyo",
-    category: "Art Direction",
-    img: "https://images.unsplash.com/photo-1627589161730-0d90bea5a656?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZW9uJTIwY3liZXJwdW5rJTIwcG9ydHJhaXQlMjBhZXN0aGV0aWN8ZW58MXx8fHwxNzcwMDMwMTUyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-80 md:h-96",
-  },
-  {
-    id: 3,
-    title: "Pastel Dreams",
-    category: "3D Design",
-    img: "https://images.unsplash.com/photo-1751646563987-d5720fb773cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMDNkJTIwc2hhcGVzJTIwY29sb3JmdWwlMjBwYXN0ZWx8ZW58MXx8fHwxNzcwMDMwMTUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-72 md:h-80",
-  },
-  {
-    id: 4,
-    title: "Eco Packaging",
-    category: "Branding",
-    img: "https://images.unsplash.com/photo-1761125802333-d145773f4461?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmdhbmljJTIwcGFja2FnaW5nJTIwZGVzaWduJTIwc3VzdGFpbmFibGV8ZW58MXx8fHwxNzcwMDMwMTUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-60 md:h-72",
-  },
-  {
-    id: 5,
-    title: "Modern Arch",
-    category: "Photography",
-    img: "https://images.unsplash.com/photo-1665043548178-8e606eca11eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcmNoaXRlY3R1cmFsJTIwZGVzaWduJTIwbWluaW1hbHxlbnwxfHx8fDE3NzAwMzAxNTJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-96 md:h-[30rem]",
-  },
-  {
-    id: 6,
-    title: "Typo Bold",
-    category: "Graphic Design",
-    img: "https://images.unsplash.com/photo-1762354766808-92f8ad416174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxib2xkJTIwdHlwb2dyYXBoeSUyMHBvc3RlciUyMGRlc2lnbnxlbnwxfHx8fDE3NzAwMzAxNTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-80 md:h-[26rem]",
-  },
-  {
-    id: 7,
-    title: "Lumina App",
-    category: "Mobile Design",
-    img: "https://images.unsplash.com/photo-1760597371674-c5a412f2ae01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWJyYW50JTIwdWklMjBkZXNpZ24lMjBtb2JpbGUlMjBhcHAlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NzAwMjU5MTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-72",
-  },
-  {
-    id: 8,
-    title: "Flux Web",
-    category: "Web Design",
-    img: "https://images.unsplash.com/photo-1659841064804-5f507b1b488a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBkZXNpZ24lMjBsYW5kaW5nJTIwcGFnZSUyMGJyaWdodCUyMGdyYWRpZW50fGVufDF8fHx8MTc3MDAyNTkxOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    height: "h-64",
-  },
-];
+import { Project, projects } from "@/data/projects";
+import { Chip } from "@heroui/react";
 
 export const WorkList = ({
   onProjectSelect,
@@ -106,14 +41,14 @@ export const WorkList = ({
   return (
     <section
       ref={containerRef}
-      className="bg-white py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
+      className="py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
     >
       <div className="max-w-[1920px] mx-auto">
         {/* Header - Fixed/Sticky feel or just top placement */}
         <div className="flex flex-col items-center justify-center mb-24 text-center">
-          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter text-black leading-[0.85]">
+          <h2 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
             Selected <br />
-            <span className="text-gray-300">Work.</span>
+            <span className="text-default">Work</span>
           </h2>
         </div>
 
@@ -186,18 +121,18 @@ const Card = ({
       />
 
       {/* Sticker/Pill Overlay */}
-      <div className="absolute top-4 left-4 right-4 flex justify-between items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-black shadow-lg">
+      <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+        <Chip className="bg-background/50 backdrop-blur-lg px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all text-xs font-bold uppercase tracking-widest text-foreground shadow-lg">
           {project.category}
-        </div>
+        </Chip>
         <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center shadow-lg">
           <ArrowUpRight size={18} />
         </div>
       </div>
 
       {/* Bottom Title */}
-      <div className="absolute bottom-6 left-6">
-        <h3 className="text-2xl font-bold text-white drop-shadow-md translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+      <div className="absolute p-4 w-full bottom-0 bg-linear-to-t from-foreground opacity-0  group-hover:opacity-100 to-transparent transition-all">
+        <h3 className="text-2xl font-bold text-background drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-all duration-300">
           {project.title}
         </h3>
       </div>
