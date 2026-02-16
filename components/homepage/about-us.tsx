@@ -57,8 +57,10 @@ export default function AboutUs() {
               Hi! We are{" "}
               <span className="text-black font-bold">Storyn Studio</span>.
               <br />
-              We build brands that don&apos;t just look good, they{" "}
-              <span className="italic text-pink-500">feel</span> good.
+              Every brand has a story. we make yours{" "}
+              <span className="italic text-accent font-bold font-serif">
+                Unforgettable.
+              </span>
               <br />
               <span className="text-sm text-gray-400 mt-4 block">
                 Based in Melbourne · Digital & Chill

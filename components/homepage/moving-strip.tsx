@@ -41,7 +41,7 @@ export default function MovingStrip() {
   ).flat();
 
   return (
-    <div className="bg-[#FB6514] py-7 ">
+    <div className="bg-accent py-7 ">
       <div className="relative -rotate-2 overflow-hidden flex w-full h-[48px] bg-background rounded-xl items-center justify-center group">
         <div className="h-fit">
           <div
