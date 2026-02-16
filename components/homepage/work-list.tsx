@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Vogue Editorial",
     category: "Fashion",
-    img: "/assets/projects/Cargexs.png",
+    img: "/assets/projects/cargexs.png",
     height: "h-64 md:h-80",
   },
   {
@@ -131,14 +131,6 @@ export const WorkList = ({
                 onClick={() => onProjectSelect?.(project)}
               />
             ))}
-            {/* Duplicate for length/feeling */}
-            {col1.map((project, i) => (
-              <Card
-                key={`c1-dup-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
-            ))}
           </motion.div>
 
           {/* Column 2 - Offset Start */}
@@ -153,13 +145,6 @@ export const WorkList = ({
                 onClick={() => onProjectSelect?.(project)}
               />
             ))}
-            {col2.map((project, i) => (
-              <Card
-                key={`c2-dup-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
-            ))}
           </motion.div>
 
           {/* Column 3 - More Offset */}
@@ -170,13 +155,6 @@ export const WorkList = ({
             {col3.map((project, i) => (
               <Card
                 key={`c3-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
-            ))}
-            {col3.map((project, i) => (
-              <Card
-                key={`c3-dup-${i}`}
                 project={project}
                 onClick={() => onProjectSelect?.(project)}
               />
