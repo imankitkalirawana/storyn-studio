@@ -15,8 +15,6 @@ interface Project {
 
 interface CaseStudyProps {
   project: Project;
-  onBack: () => void;
-  onNext: () => void;
 }
 
 const detailImages = [
@@ -24,11 +22,7 @@ const detailImages = [
   "https://images.unsplash.com/photo-1763674111862-78a0a5031711?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGVzaWduJTIwZGV0YWlscyUyMGNsb3NlJTIwdXAlMjB3aGl0ZXxlbnwxfHx8fDE3NzEyNDYyNDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
 ];
 
-export const CaseStudy: React.FC<CaseStudyProps> = ({
-  project,
-  onBack,
-  onNext,
-}) => {
+export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
   const { scrollY } = useScroll();
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
   const heroScale = useTransform(scrollY, [0, 500], [1, 1.1]);
@@ -41,10 +35,7 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({
     <div className="bg-white min-h-screen text-black font-sans selection:bg-black selection:text-white">
       {/* Navigation / Back Button - Sticky & Blended */}
       <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference text-white">
-        <button
-          onClick={onBack}
-          className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity"
-        >
+        <button className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
           <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
             <ArrowLeft size={14} />
           </div>
@@ -264,10 +255,7 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({
         </div>
 
         {/* Next Project Teaser */}
-        <div
-          onClick={onNext}
-          className="relative group cursor-pointer py-32 border-t border-gray-200 overflow-hidden"
-        >
+        <div className="relative group cursor-pointer py-32 border-t border-gray-200 overflow-hidden">
           <div className="relative z-10 flex flex-col items-center text-center gap-8">
             <p className="text-sm font-bold uppercase tracking-widest text-gray-400">
               Next Case Study
