@@ -17,7 +17,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Vogue Editorial",
     category: "Fashion",
-    img: "/assets/projects/Cargexs.png",
+    img: "/assets/projects/cargex.png",
     height: "h-64 md:h-80",
   },
   {
