@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   id: number;
@@ -35,12 +36,15 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
     <div className="bg-white min-h-screen text-black font-sans selection:bg-black selection:text-white">
       {/* Navigation / Back Button - Sticky & Blended */}
       <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference text-white">
-        <button className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
+        <Link
+          href="/"
+          className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity"
+        >
           <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
             <ArrowLeft size={14} />
           </div>
           <span className="hidden md:inline">Back</span>
-        </button>
+        </Link>
         <div className="text-sm font-bold uppercase tracking-widest opacity-0 md:opacity-100 transition-opacity">
           Storyn Studio
         </div>
