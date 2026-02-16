@@ -32,9 +32,6 @@ importers:
       react-dom:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
-      utils:
-        specifier: link:@@motionone/utils
-        version: link:@@motionone/utils
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4

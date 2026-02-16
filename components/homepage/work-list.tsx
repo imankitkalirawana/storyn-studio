@@ -17,7 +17,7 @@ const projects: Project[] = [
     id: 1,
     title: "Vogue Editorial",
     category: "Fashion",
-    img: "https://images.unsplash.com/photo-1730385781420-77c5ef5f0539?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aWJyYW50JTIwZWRpdG9yaWFsJTIwZmFzaGlvbiUyMHBob3RvZ3JhcGh5fGVufDF8fHx8MTc3MDAzMDE1M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    img: "/assets/projects/Cargexs.png",
     height: "h-64 md:h-80",
   },
   {
@@ -124,9 +124,6 @@ export const WorkList = () => {
               <Card key={`c1-${i}`} project={project} />
             ))}
             {/* Duplicate for length/feeling */}
-            {col1.map((project, i) => (
-              <Card key={`c1-dup-${i}`} project={project} />
-            ))}
           </motion.div>
 
           {/* Column 2 - Offset Start */}
@@ -137,9 +134,6 @@ export const WorkList = () => {
             {col2.map((project, i) => (
               <Card key={`c2-${i}`} project={project} />
             ))}
-            {col2.map((project, i) => (
-              <Card key={`c2-dup-${i}`} project={project} />
-            ))}
           </motion.div>
 
           {/* Column 3 - More Offset */}
@@ -149,9 +143,6 @@ export const WorkList = () => {
           >
             {col3.map((project, i) => (
               <Card key={`c3-${i}`} project={project} />
-            ))}
-            {col3.map((project, i) => (
-              <Card key={`c3-dup-${i}`} project={project} />
             ))}
           </motion.div>
         </div>

@@ -22,7 +22,7 @@ export const Hero = () => {
         dragConstraints={containerRef}
       >
         <Image
-          src="https://images.unsplash.com/photo-1769613758100-a5d12762b1ce"
+          src="/hero(2).png"
           alt="Graffiti"
           fill
           className="object-cover"
