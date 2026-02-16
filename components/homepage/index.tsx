@@ -3,12 +3,13 @@ import { Footer } from "@/components/homepage/footer";
 import { Hero } from "@/components/homepage/hero";
 import { Intersection } from "@/components/homepage/inter-section";
 import { StorySection } from "@/components/homepage/story-section";
-import { Project, WorkList, projects } from "@/components/homepage/work-list";
+import { WorkList } from "@/components/homepage/work-list";
 import AboutUs from "@/components/homepage/about-us";
 import MovingStrip from "@/components/homepage/moving-strip";
 import { Testimonials } from "@/components/homepage/testimonial";
 import { CaseStudy } from "../projects";
 import { useEffect, useState } from "react";
+import { Project, projects } from "@/data/projects";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
