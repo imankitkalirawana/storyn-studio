@@ -11,7 +11,7 @@ export default function AboutUs() {
     <>
       <section
         ref={containerRef}
-        className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden px-4 py-20"
+        className="relative w-full flex flex-col items-center justify-center overflow-hidden px-4 "
       >
         <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-7xl">
           {/* Music Card */}
