@@ -4,13 +4,10 @@ import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Project, projects } from "@/data/projects";
-import { Chip } from "@heroui/react";
+import { Button, Chip } from "@heroui/react";
+import Link from "next/link";
 
-export const WorkList = ({
-  onProjectSelect,
-}: {
-  onProjectSelect?: (project: Project) => void;
-}) => {
+export const WorkList = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -60,11 +57,7 @@ export const WorkList = ({
             className="flex flex-col gap-12 md:gap-24 pt-0"
           >
             {col1.map((project, i) => (
-              <Card
-                key={`c1-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
+              <Card key={`c1-${i}`} project={project} />
             ))}
           </motion.div>
 
@@ -74,11 +67,7 @@ export const WorkList = ({
             className="flex flex-col gap-12 md:gap-24 pt-24 md:pt-48"
           >
             {col2.map((project, i) => (
-              <Card
-                key={`c2-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
+              <Card key={`c2-${i}`} project={project} />
             ))}
           </motion.div>
 
@@ -88,11 +77,7 @@ export const WorkList = ({
             className="hidden md:flex flex-col gap-12 md:gap-24 pt-12"
           >
             {col3.map((project, i) => (
-              <Card
-                key={`c3-${i}`}
-                project={project}
-                onClick={() => onProjectSelect?.(project)}
-              />
+              <Card key={`c3-${i}`} project={project} />
             ))}
           </motion.div>
         </div>
@@ -101,17 +86,10 @@ export const WorkList = ({
   );
 };
 
-const Card = ({
-  project,
-  onClick,
-}: {
-  project: Project;
-  onClick?: () => void;
-}) => {
+const Card = ({ project }: { project: Project }) => {
   return (
     <div
       className={`relative group w-full ${project.height} rounded-[2rem] overflow-hidden`}
-      onClick={onClick}
     >
       <Image
         src={project.img}
@@ -125,9 +103,11 @@ const Card = ({
         <Chip className="bg-background/50 backdrop-blur-lg px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all text-xs font-bold uppercase tracking-widest text-foreground shadow-lg">
           {project.category}
         </Chip>
-        <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center shadow-lg">
-          <ArrowUpRight size={18} />
-        </div>
+        <Link href={`/projects/${project.id}`}>
+          <Button className="w-10 h-10 bg-foreground text-background rounded-full flex items-center opacity-0 group-hover:opacity-100 transition-all justify-center shadow-lg">
+            <ArrowUpRight size={18} />
+          </Button>
+        </Link>
       </div>
 
       {/* Bottom Title */}

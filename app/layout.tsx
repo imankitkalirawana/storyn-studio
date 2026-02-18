@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Tinos } from "next/font/google";
 import "./globals.css";
+import Provider from "./provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className={`${inter.variable} ${tinos.variable} antialiased`}>
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
