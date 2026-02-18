@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+/* Hide scrollbar throughout the site */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 @keyframes moving-horizontal {
   from {
     transform: translateX(0);
@@ -11,7 +20,7 @@
 }
 
 .animate-moving-horizontal {
-  animation: moving-horizontal 40s linear infinite;
+  animation: moving-horizontal 80s linear infinite;
 }
 
 /*

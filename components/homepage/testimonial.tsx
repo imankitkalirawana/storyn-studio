@@ -94,7 +94,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export const Testimonials = () => {
   return (
-    <section className="bg-white py-32 overflow-hidden border-t border-gray-100">
+    <section className="py-32 overflow-hidden border-t border-gray-100">
       <div className="mb-24 px-6 md:px-12 flex items-end justify-between max-w-[1920px] mx-auto">
         <div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">

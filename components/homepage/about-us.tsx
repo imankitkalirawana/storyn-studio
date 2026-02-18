@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { SpikyCircle } from "./stickers";
 import { useRef } from "react";
+
 export default function AboutUs() {
   const containerRef = useRef<HTMLDivElement>(null);
   return (

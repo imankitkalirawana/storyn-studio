@@ -10,12 +10,12 @@ const STRIP_ITEMS = [
 ];
 
 // Match animation translateX(-50%): use 2 copies so the loop is seamless
-const REPEAT_COUNT = 5;
+const REPEAT_COUNT = 10;
 
 function StripItem({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-4 whitespace-nowrap" aria-hidden>
-      <span className="text-[40px] font-medium mx-4">{text}</span>
+      <span className="text-[36px] mx-4">{text}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="35"
@@ -25,7 +25,7 @@ function StripItem({ text }: { text: string }) {
       >
         <path
           d="M16.3832 0.783373L21.6154 12.8665L34.1086 17.0257L22.0254 22.2578L17.8663 34.751L12.6341 22.6679L0.140944 18.5087L12.2241 13.2765L16.3832 0.783373Z"
-          fill="#FB6514"
+          fill="var(--accent)"
         />
       </svg>
     </div>
