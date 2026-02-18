@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export const Navigation = () => {
   const [hidden, setHidden] = useState(false);
@@ -34,18 +35,19 @@ export const Navigation = () => {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 md:py-8 flex justify-between items-center transition-colors duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 px-6  md:px-12 py-6 flex justify-between items-center transition-colors duration-300 ${
           isScrolled
             ? "bg-white/90 backdrop-blur-sm shadow-sm"
             : "bg-transparent"
         }`}
       >
-        <a
-          href="#"
+        <Image
+          src="/assets/logo.png"
+          alt="Storyn Studio"
+          width={200}
+          height={200}
           className="text-xl md:text-2xl font-serif tracking-tight text-black z-50"
-        >
-          Storyn Studio.
-        </a>
+        ></Image>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-12">
