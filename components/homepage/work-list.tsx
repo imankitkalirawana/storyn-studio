@@ -52,10 +52,7 @@ export const WorkList = () => {
         {/* Puzzle Grid / Parallax Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
           {/* Column 1 */}
-          <motion.div
-            style={{ y: y1 }}
-            className="flex flex-col gap-12 md:gap-24 pt-0"
-          >
+          <motion.div style={{ y: y1 }} className="flex flex-col gap-16 pt-0">
             {col1.map((project, i) => (
               <Card key={`c1-${i}`} project={project} />
             ))}
@@ -64,7 +61,7 @@ export const WorkList = () => {
           {/* Column 2 - Offset Start */}
           <motion.div
             style={{ y: y2 }}
-            className="flex flex-col gap-12 md:gap-24 pt-24 md:pt-48"
+            className="flex flex-col gap-16  md:pt-48"
           >
             {col2.map((project, i) => (
               <Card key={`c2-${i}`} project={project} />
@@ -74,7 +71,7 @@ export const WorkList = () => {
           {/* Column 3 - More Offset */}
           <motion.div
             style={{ y: y3 }}
-            className="hidden md:flex flex-col gap-12 md:gap-24 pt-12"
+            className="hidden md:flex flex-col gap-16 pt-12"
           >
             {col3.map((project, i) => (
               <Card key={`c3-${i}`} project={project} />
