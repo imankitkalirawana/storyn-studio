@@ -15,7 +15,7 @@ const REPEAT_COUNT = 10;
 function StripItem({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-4 whitespace-nowrap" aria-hidden>
-      <span className="text-[36px] mx-4">{text}</span>
+      <span className="text-3xl mx-4">{text}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="35"
