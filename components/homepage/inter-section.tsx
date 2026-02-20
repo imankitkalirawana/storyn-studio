@@ -117,7 +117,7 @@ export const Intersection = () => {
             product and brand
           </h2>
           <p className="text-gray-600 max-w-md leading-relaxed">
-            With over 15 years of experience, our offerings have evolved into a
+            With over 2+ years of experience, our offerings have evolved into a
             set of services that complement each other, allowing us to design,
             develop, and extend a consistent experience across all touchpoints.
           </p>

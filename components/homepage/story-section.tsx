@@ -26,7 +26,7 @@ const storySteps: StoryStep[] = [
 const team: TeamMember[] = [
   {
     name: "Ankit Kalirawana",
-    role: "Father of Co-Founder",
+    role: "pCo-Founder",
     img: "/assets/ankit.jpg",
   },
   {
@@ -48,7 +48,7 @@ const team: TeamMember[] = [
 
 export const StorySection = () => {
   return (
-    <section className="bg-white text-black py-32 relative">
+    <section className="bg-white text-black py-32 relative" id="about-us">
       <div className="max-w-[1920px] mx-auto px-4 md:px-12">
         {/* Intro Text */}
         <div className="mb-32 max-w-4xl">

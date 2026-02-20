@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import { Button, Link } from "@heroui/react";
 
 export const Navigation = () => {
   const [hidden, setHidden] = useState(false);
@@ -22,8 +23,7 @@ export const Navigation = () => {
 
   const links = [
     { name: "Projects", href: "#work" },
-    { name: "Studio", href: "#philosophy" },
-    { name: "Contact", href: "#contact" },
+    { name: "About Us", href: "#about-us" },
   ];
 
   return (
@@ -35,8 +35,10 @@ export const Navigation = () => {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed  px-6  md:px-12 py-6 flex justify-between items-center transition-colors duration-300 ${
-          isScrolled ? " backdrop-blur-sm shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 px-6  md:px-12 py-6 flex justify-between items-center transition-colors duration-300 ${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-sm shadow-sm"
+            : "bg-transparent"
         }`}
       >
         <Image
@@ -47,16 +49,27 @@ export const Navigation = () => {
         ></Image>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-12">
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium transition-colors uppercase tracking-widest text-black/70 hover:text-black"
+        <div className="flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-12">
+            {links.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium transition-colors uppercase tracking-widest text-black/70 hover:text-black"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <Link href="/contact" className="no-underline">
+            <Button
+              size="md"
+              variant="tertiary"
+              className="font-medium rounded-full text-sm uppercase tracking-widest bg-black text-white"
             >
-              {link.name}
-            </a>
-          ))}
+              Contact
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}

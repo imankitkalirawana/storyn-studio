@@ -1,5 +1,6 @@
 "use client";
 import NextTopLoader from "nextjs-toploader";
+import { Toast } from "@heroui/react";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         color="var(--accent)"
       />
       {children}
+      <Toast.Provider />
     </>
   );
 }

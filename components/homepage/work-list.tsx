@@ -37,6 +37,7 @@ export const WorkList = () => {
 
   return (
     <section
+      id="work"
       ref={containerRef}
       className="py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
     >

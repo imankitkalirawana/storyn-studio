@@ -64,7 +64,7 @@ export default function AboutUs() {
               </span>
               <br />
               <span className="text-sm text-gray-400 mt-4 block">
-                Based in Melbourne · Digital & Chill
+                Based in Gurugram · Digital & Chill
               </span>
             </p>
           </motion.div>
