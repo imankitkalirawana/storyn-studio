@@ -45,7 +45,7 @@ export default function ContactForm() {
 
   return (
     <section className="relative flex flex-col gap-12 font-manrope md:flex-row px-24 py-12">
-      <div className="relative hidden w-full overflow-hidden rounded-3xl md:block md:w-[40%]">
+      <div className="relative text-white hidden w-full overflow-hidden rounded-3xl md:block md:w-[40%]">
         <Image
           src="/assets/Frame 2.png"
           alt=""
@@ -64,10 +64,9 @@ export default function ContactForm() {
           </Button>
         </Link>
         <div className="absolute bottom-0 left-0 z-10 flex h-1/2 w-full flex-col justify-end bg-linear-to-t from-black to-transparent p-8">
-          <h3 className="text-xl text-white">Contact Me</h3>
-          <p className="max-w-xs text-xs text-white/90">
-            Ask about my projects, pricing, or anything else. I am happy to
-            help.
+          <h3 className="text-xl">Contact Us</h3>
+          <p className="max-w-xs text-xs ">
+            Ask about projects, pricing, or anything else. We are happy to help.
           </p>
         </div>
       </div>
@@ -75,7 +74,7 @@ export default function ContactForm() {
       <div className="flex flex-col justify-center gap-6 md:w-[60%]">
         <form onSubmit={formik.handleSubmit} className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <TextField isInvalid={!!formik.errors.name}>
+            <TextField isInvalid={formik.touched.name && !!formik.errors.name}>
               <Label isRequired>Name</Label>
               <Input
                 name="name"
@@ -84,7 +83,6 @@ export default function ContactForm() {
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                aria-invalid={!!(formik.touched.name && formik.errors.name)}
                 className="w-full"
               />
               <FieldError>{formik.errors.name}</FieldError>
@@ -92,7 +90,9 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <TextField isInvalid={!!formik.errors.email}>
+            <TextField
+              isInvalid={formik.touched.email && !!formik.errors.email}
+            >
               <Label isRequired>Email</Label>
               <Input
                 name="email"
@@ -102,7 +102,6 @@ export default function ContactForm() {
                 value={formik.values.email}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                aria-invalid={!!(formik.touched.email && formik.errors.email)}
                 className="w-full"
               />
               <FieldError>{formik.errors.email}</FieldError>
@@ -124,7 +123,9 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <TextField isInvalid={!!formik.errors.message}>
+            <TextField
+              isInvalid={formik.touched.message && !!formik.errors.message}
+            >
               <Label isRequired>Message</Label>
               <TextArea
                 name="message"
@@ -133,9 +134,6 @@ export default function ContactForm() {
                 value={formik.values.message}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                aria-invalid={
-                  !!(formik.touched.message && formik.errors.message)
-                }
                 className="w-full min-h-[120px]"
               />
               <FieldError>{formik.errors.message}</FieldError>
