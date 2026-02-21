@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { Button, Link } from "@heroui/react";
+import { Link, Button } from "@heroui/react";
 
 export const Navigation = () => {
   const [hidden, setHidden] = useState(false);
@@ -62,11 +62,7 @@ export const Navigation = () => {
             ))}
           </div>
           <Link href="/contact" className="no-underline">
-            <Button
-              size="md"
-              variant="tertiary"
-              className="font-medium rounded-full text-sm uppercase tracking-widest bg-black text-white"
-            >
+            <Button className="font-medium rounded-full text-sm uppercase tracking-widest bg-black text-white">
               Contact
             </Button>
           </Link>
