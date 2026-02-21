@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowLeft, ArrowUpRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Button } from "@heroui/react";
 
 interface Project {
   id: number;
@@ -11,17 +13,24 @@ interface Project {
   category: string;
   img: string;
   height: string;
+  details: {
+    client: string;
+    role: string;
+    Headline: string;
+    description: {
+      column1?: string;
+      column2?: string;
+    };
+    insights: string;
+    name: string;
+    designation: string;
+  };
   caseStudyUrl?: string;
 }
 
 interface CaseStudyProps {
   project: Project;
 }
-
-const detailImages = [
-  "https://images.unsplash.com/photo-1662928793080-155661f021f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0eXBvZ3JhcGh5JTIwcG9zdGVyJTIwZGVzaWduJTIwb24lMjB3YWxsfGVufDF8fHx8MTc3MTI0NjI0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  "https://images.unsplash.com/photo-1763674111862-78a0a5031711?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwZGVzaWduJTIwZGV0YWlscyUyMGNsb3NlJTIwdXAlMjB3aGl0ZXxlbnwxfHx8fDE3NzEyNDYyNDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-];
 
 export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
   const { scrollY } = useScroll();
@@ -31,6 +40,8 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [project]);
+
+  const router = useRouter();
 
   return (
     <div className="bg-white min-h-screen text-black font-sans selection:bg-black selection:text-white">
@@ -52,7 +63,7 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
       </nav>
 
       {/* Hero Section */}
-      <div className="w-full h-screen relative overflow-hidden">
+      <div className="w-full h-screen  relative overflow-hidden">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
           className="w-full h-full"
@@ -119,15 +130,15 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
                   <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
                     Client
                   </h3>
-                  <p className="text-lg font-medium">Storyn Partners</p>
+                  <p className="text-lg font-medium">
+                    {project.details.client}
+                  </p>
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
                     Role
                   </h3>
-                  <p className="text-lg font-medium">
-                    Art Direction, UI/UX, Dev
-                  </p>
+                  <p className="text-lg font-medium">{project.details.role}</p>
                 </div>
 
                 {/* Secondary View Button for Sidebar */}
@@ -155,76 +166,15 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-6xl font-medium leading-tight mb-12 indent-12 md:indent-24">
-                Our mission was to strip away the noise and reveal the{" "}
-                <span className="italic font-serif text-gray-400">
-                  essential soul
-                </span>{" "}
-                of the brand.
+              <h2 className="text-3xl md:text-4xl font-medium leading-tight mb-12  ">
+                {project.details.Headline}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-lg text-gray-600 leading-relaxed font-medium">
-                <p>
-                  For {project.title}, we approached the design as a form of
-                  digital architecture. Every pixel was placed with purpose,
-                  building a structure that houses the brand&apos;s narrative
-                  without overpowering it.
-                </p>
-                <p>
-                  The result is a seamless, immersive experience that engages
-                  users from the first interaction, guiding them effortlessly
-                  through a journey of discovery and connection.
-                </p>
+                <p>{project.details.description.column1}</p>
+                <p>{project.details.description.column2}</p>
               </div>
             </motion.div>
           </div>
-        </div>
-
-        {/* Immersive Gallery */}
-        <div className="space-y-6 md:space-y-12 mb-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
-            <motion.div
-              whileHover={{ scale: 0.98 }}
-              transition={{ duration: 0.5 }}
-              className="aspect-3/4 rounded-[2rem] overflow-hidden bg-gray-100"
-            >
-              <Image
-                src={detailImages[0]}
-                alt="Process 1"
-                className="w-full h-full object-cover"
-                fill
-              />
-            </motion.div>
-            <div className="space-y-6 md:space-y-12">
-              <p className="text-sm font-bold uppercase tracking-widest text-gray-400 max-w-xs ml-auto text-right">
-                Visual Exploration — 01
-              </p>
-              <motion.div
-                whileHover={{ scale: 0.98 }}
-                transition={{ duration: 0.5 }}
-                className="aspect-square rounded-[2rem] overflow-hidden bg-gray-100"
-              >
-                <Image
-                  src={detailImages[1]}
-                  alt="Process 2"
-                  className="w-full h-full object-cover"
-                  fill
-                />
-              </motion.div>
-            </div>
-          </div>
-
-          <motion.div
-            whileHover={{ scale: 0.99 }}
-            transition={{ duration: 0.5 }}
-            className="w-full aspect-video rounded-[2rem] overflow-hidden bg-gray-100"
-          >
-            <Image
-              src={project.img}
-              alt="Final Result"
-              className="w-full h-full object-cover"
-              fill
-            />
-          </motion.div>
         </div>
 
         {/* Insight Section */}
@@ -235,23 +185,13 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
           </div>
           <div className="space-y-8">
             <p className="text-xl leading-relaxed">
-              &quot;We realized that the user journey wasn&apos;t linear—it was
-              circular. By reimagining the navigation flow, we increased
-              engagement by 40% and reduced bounce rates significantly.&quot;
+              {project.details.insights}
             </p>
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gray-200 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1761429942613-8d36f33dea5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0JTIwbWluaW1hbGlzdCUyMHN0dWRpbyUyMGxpZ2h0aW5nJTIwd29tYW58ZW58MXx8fHwxNzcwMDMwNTczfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Designer"
-                  className="w-full h-full object-cover"
-                  fill
-                />
-              </div>
               <div>
-                <p className="font-bold text-sm">Elena Vosk</p>
+                <p className="font-bold text-sm">{project.details.name}</p>
                 <p className="text-xs text-gray-500 uppercase tracking-wider">
-                  Lead Designer
+                  {project.details.designation}
                 </p>
               </div>
             </div>
@@ -267,9 +207,16 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
             <h2 className="text-6xl md:text-9xl font-bold tracking-tighter group-hover:scale-105 transition-transform duration-500">
               Keep Scrolling
             </h2>
-            <div className="w-20 h-20 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <ArrowUpRight size={32} />
-            </div>
+
+            <Button
+              onClick={() => router.back()}
+              className="w-20 h-20 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
+            >
+              <ArrowUpRight
+                size={18}
+                className="group-hover:rotate-45 transition-transform"
+              />
+            </Button>
           </div>
 
           {/* Hover Background Gradient */}
