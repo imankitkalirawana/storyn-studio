@@ -15,11 +15,11 @@ const REPEAT_COUNT = 10;
 function StripItem({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-4 whitespace-nowrap" aria-hidden>
-      <span className="text-3xl mx-4">{text}</span>
+      <span className="text-xl md:text-3xl mx-2 md:mx-4">{text}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="35"
-        height="35"
+        width="20"
+        height="20"
         viewBox="0 0 35 35"
         fill="none"
       >
@@ -41,8 +41,8 @@ export default function MovingStrip() {
   ).flat();
 
   return (
-    <div className="bg-accent py-7  ">
-      <div className="relative -rotate-2 overflow-hidden flex w-full h-[48px] bg-background items-center justify-center group">
+    <div className="bg-accent py-3 md:py-7 ">
+      <div className="relative -rotate-2 overflow-hidden flex w-full h-[24px] md:h-[48px] bg-background items-center justify-center group">
         <div className="h-fit">
           <div
             className="flex animate-moving-horizontal w-max"

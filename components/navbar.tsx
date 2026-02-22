@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { cn } from "@heroui/react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Link, Button } from "@heroui/react";
@@ -24,6 +25,7 @@ export const Navigation = () => {
   const links = [
     { name: "Projects", href: "#work" },
     { name: "About Us", href: "#about-us" },
+    { name: "Contact", href: "/contact", className: "md:hidden" },
   ];
 
   return (
@@ -55,13 +57,17 @@ export const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium transition-colors uppercase tracking-widest text-black/70 hover:text-black"
+                className={cn(
+                  "text-sm font-medium transition-colors uppercase tracking-widest text-black/70 hover:text-black",
+                  link.className,
+                )}
               >
                 {link.name}
               </a>
             ))}
           </div>
-          <Link href="/contact" className="no-underline">
+
+          <Link href="/contact" className="no-underline hidden md:block">
             <Button className="font-medium rounded-full text-sm uppercase tracking-widest bg-black text-white">
               Contact
             </Button>
@@ -89,7 +95,7 @@ export const Navigation = () => {
               key={link.name}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className="text-3xl font-serif"
+              className={cn("text-3xl font-serif", link.className)}
             >
               {link.name}
             </a>
