@@ -37,7 +37,7 @@ export const Navigation = () => {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 px-6  md:px-12 py-6 flex justify-between items-center transition-colors duration-300 ${
+        className={`fixed top-0 max-h-[82px] left-0 right-0 z-50 pl-0 pr-6  md:px-12 py-6 flex justify-between items-center transition-colors duration-300 ${
           isScrolled
             ? "bg-white/90 backdrop-blur-sm shadow-sm"
             : "bg-transparent"
@@ -47,7 +47,7 @@ export const Navigation = () => {
           src="/assets/logo.png"
           alt="Storyn Studio"
           width={200}
-          height={200}
+          height={34}
         ></Image>
 
         {/* Desktop */}

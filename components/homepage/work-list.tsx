@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -7,8 +7,11 @@ import { Project, projects } from "@/data/projects";
 import { Button, Chip } from "@heroui/react";
 import Link from "next/link";
 
+const MOBILE_INITIAL_COUNT = 4;
+
 export const WorkList = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -16,7 +19,7 @@ export const WorkList = () => {
 
   const springConfig = { stiffness: 100, damping: 30, restDelta: 0.001 };
 
-  // Parallax transforms for 3 columns
+  // Parallax transforms for 3 columns (desktop)
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -200]),
     springConfig,
@@ -24,16 +27,20 @@ export const WorkList = () => {
   const y2 = useSpring(
     useTransform(scrollYProgress, [0, 1], [-100, 100]),
     springConfig,
-  ); // Moves opposite/slower
+  );
   const y3 = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, -350]),
     springConfig,
   );
 
-  // Shuffle/Split projects for columns
+  // Shuffle/Split projects for columns (desktop)
   const col1 = [projects[0], projects[3], projects[6], projects[1]];
   const col2 = [projects[4], projects[2], projects[7], projects[0]];
   const col3 = [projects[5], projects[1], projects[3], projects[4]];
+
+  const mobileInitial = projects.slice(0, MOBILE_INITIAL_COUNT);
+  const mobileRest = projects.slice(MOBILE_INITIAL_COUNT);
+  const hasMoreMobile = mobileRest.length > 0;
 
   return (
     <section
@@ -42,7 +49,7 @@ export const WorkList = () => {
       className="py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
     >
       <div className="max-w-[1920px] mx-auto">
-        {/* Header - Fixed/Sticky feel or just top placement */}
+        {/* Header */}
         <div className="flex flex-col items-center justify-center mb-24 text-center">
           <h2 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
             Selected <br />
@@ -50,30 +57,45 @@ export const WorkList = () => {
           </h2>
         </div>
 
-        {/* Puzzle Grid / Parallax Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
-          {/* Column 1 */}
+        {/* Mobile: 4 projects + View more → then all */}
+        <div className="md:hidden flex flex-col gap-8">
+          {mobileInitial.map((project) => (
+            <Card key={project.id} project={project} />
+          ))}
+          {hasMoreMobile && !showAllMobile && (
+            <div className="flex justify-center pt-4">
+              <Button
+                size="lg"
+                variant="outline"
+                className="font-semibold border-2 rounded-full px-8"
+                onPress={() => setShowAllMobile(true)}
+              >
+                View more
+              </Button>
+            </div>
+          )}
+          {showAllMobile &&
+            mobileRest.map((project) => (
+              <Card key={project.id} project={project} />
+            ))}
+        </div>
+
+        {/* Desktop: Puzzle Grid / Parallax Columns (unchanged) */}
+        <div className="hidden md:grid md:grid-cols-3 gap-16">
           <motion.div style={{ y: y1 }} className="flex flex-col gap-16 pt-0">
             {col1.map((project, i) => (
               <Card key={`c1-${i}`} project={project} />
             ))}
           </motion.div>
-
-          {/* Column 2 - Offset Start */}
           <motion.div
             style={{ y: y2 }}
-            className="flex flex-col gap-16  md:pt-48"
+            className="flex flex-col gap-16 md:pt-48"
           >
             {col2.map((project, i) => (
               <Card key={`c2-${i}`} project={project} />
             ))}
           </motion.div>
-
-          {/* Column 3 - More Offset */}
-          <motion.div
-            style={{ y: y3 }}
-            className="hidden md:flex flex-col gap-16 pt-12"
-          >
+          <motion.div style={{ y: y3 }} className="flex flex-col gap-16 pt-12">
             {col3.map((project, i) => (
               <Card key={`c3-${i}`} project={project} />
             ))}

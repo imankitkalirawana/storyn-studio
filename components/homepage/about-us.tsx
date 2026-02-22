@@ -11,16 +11,15 @@ export default function AboutUs() {
     <>
       <section
         ref={containerRef}
-        className="relative w-full flex flex-col items-center justify-center overflow-hidden px-4 py-12"
+        className="relative w-full flex  items-center justify-center overflow-hidden px-4 py-12"
       >
-        <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-7xl">
+        <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-20 items-center max-w-7xl">
           {/* Music Card */}
           <motion.div
             className="bg-white rounded-3xl p-4 flex flex-col gap-4 max-w-xs mx-auto md:mx-0 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
-            drag
             dragConstraints={containerRef}
           >
             <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-gray-100">
@@ -70,7 +69,7 @@ export default function AboutUs() {
           </motion.div>
 
           {/* Profile Circle */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center mt-4 md:mt-0">
             <motion.div
               className="absolute inset-0 text-black/5 scale-150"
               animate={{ rotate: 360 }}

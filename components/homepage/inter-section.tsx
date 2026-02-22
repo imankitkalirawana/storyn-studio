@@ -111,7 +111,7 @@ export const Intersection = () => {
     <section className="bg-white py-24 px-6 md:px-12 overflow-hidden select-none">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-12">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-6 md:gap-12">
           <h2 className="text-4xl md:text-6xl font-serif text-black max-w-xl leading-[1.1]">
             At the intersection of <br />
             product and brand

@@ -24,7 +24,7 @@ export const projects: Project[] = [
     title: "Cargex | LCL Shipping & Logistics SaaS Platform",
     category: "Saas Dashboard",
     img: "/assets/projects/cargex.png",
-    height: "h-72",
+    height: "h-64 md:h-72",
     details: {
       client: "Cargex",
       role: "UI/UX Design, SaaS Architecture, Platform Strategy",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     title: "Prvaha Brand identity",
     category: "Brand Identity",
     img: "/assets/projects/prvaha-branding.png",
-    height: "h-72",
+    height: "h-64 md:h-72",
     details: {
       client: "Prvaha Labs",
       role: "Brand Strategy, Visual Identity, Design System",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     title: "Aspira",
     category: "UI/UX",
     img: "/assets/projects/aspira.png",
-    height: "h-60 md:h-64",
+    height: "h-64 md:h-64",
     details: {
       client: "Aspira",
       role: "UI/UX Design, User Research, Community Strategy",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     title: "Calmify",
     category: "UI/UX",
     img: "/assets/projects/calmify.png",
-    height: "h-96 md:h-64",
+    height: "h-64 md:h-96",
     details: {
       client: "Calmify",
       role: "UI/UX Design, App Architecture, Emotional Design",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: "Fundflux",
     category: "Web Design",
     img: "/assets/projects/fundflux.png",
-    height: "h-72",
+    height: "h-64 md:h-72",
     details: {
       client: "Fundflux",
       role: "UI/UX Design,  Dashboard Architecture, Visual Identity",
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     title: "Sundrop Brand Identity",
     category: "Brand Identity",
     img: "/assets/projects/sundrop.png",
-    height: "h-72",
+    height: "h-64 md:h-72",
     details: {
       client: "Sundrop",
       role: "Brand Identity, Packaging Design, Visual Strategy",
@@ -185,7 +185,7 @@ export const projects: Project[] = [
     title: "Talentrix",
     category: "Brand Identity",
     img: "/assets/projects/talentrix.png",
-    height: "h-64",
+    height: "h-64 md:h-72",
     details: {
       client: "Talentrix",
       role: " Brand Strategy, Visual Identity, Art Direction",
