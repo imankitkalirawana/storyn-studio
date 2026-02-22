@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion } from "motion/react";
-import { Flower } from "./stickers";
+import { Flower, Starburst } from "./stickers";
 import Image from "next/image";
 
 export const Hero = () => {
@@ -27,6 +27,16 @@ export const Hero = () => {
           fill
           className="object-cover"
         />
+      </motion.div>
+
+      {/* STARBURST pink */}
+
+      <motion.div
+        className="absolute left-[-80] top-96  w-60 h-60 text-pink-500 z-0"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+      >
+        <Starburst className="w-full h-full drop-shadow-[0_4px_10px_rgba(236,72,153,0.3)]" />
       </motion.div>
 
       {/* RIGHT IMAGE */}

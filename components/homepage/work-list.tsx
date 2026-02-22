@@ -86,34 +86,35 @@ export const WorkList = () => {
 
 const Card = ({ project }: { project: Project }) => {
   return (
-    <div
-      className={`relative group w-full ${project.height} rounded-[2rem] overflow-hidden`}
-    >
-      <Image
-        src={project.img}
-        alt={project.title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-        fill
-      />
+    <Link href={`/projects/${project.id}`}>
+      <div
+        className={`relative group w-full ${project.height} rounded-[2rem] overflow-hidden`}
+      >
+        <Image
+          src={project.img}
+          alt={project.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          fill
+        />
 
-      {/* Sticker/Pill Overlay */}
-      <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
-        <Chip className="bg-background/50 backdrop-blur-lg px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all text-xs font-bold uppercase tracking-widest text-foreground shadow-lg">
-          {project.category}
-        </Chip>
-        <Link href={`/projects/${project.id}`}>
+        {/* Sticker/Pill Overlay */}
+        <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+          <Chip className="bg-background/50 backdrop-blur-lg px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all text-xs font-bold uppercase tracking-widest text-foreground shadow-lg">
+            {project.category}
+          </Chip>
+
           <Button className="w-10 h-10 bg-foreground text-background rounded-full flex items-center opacity-0 group-hover:opacity-100 transition-all justify-center shadow-lg">
             <ArrowUpRight size={18} />
           </Button>
-        </Link>
-      </div>
+        </div>
 
-      {/* Bottom Title */}
-      <div className="absolute p-4 w-full bottom-0 bg-linear-to-t from-foreground opacity-0  group-hover:opacity-100 to-transparent transition-all">
-        <h3 className="text-2xl font-bold text-background drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-          {project.title}
-        </h3>
+        {/* Bottom Title */}
+        <div className="absolute p-4 w-full bottom-0 bg-linear-to-t from-foreground opacity-0  group-hover:opacity-100 to-transparent transition-all">
+          <h3 className="text-2xl font-bold text-background drop-shadow-md translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+            {project.title}
+          </h3>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };

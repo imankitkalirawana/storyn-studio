@@ -72,7 +72,7 @@ export const StorySection = () => {
         </div>
 
         {/* Narrative Flow */}
-        <div className="flex flex-col gap-32 md:gap-48 mb-48">
+        <div className="flex flex-col gap-32 md:gap-18 mb-24">
           {storySteps.map((step, i) => (
             <StoryItem key={i} step={step} index={i} />
           ))}
@@ -117,7 +117,7 @@ const StoryItem = ({ step, index }: { step: StoryStep; index: number }) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      viewport={{ margin: "-100px" }}
+      viewport={{ margin: "-10px" }}
       className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-12 md:gap-24`}
     >
       <div className="flex-1 space-y-6">
@@ -125,7 +125,7 @@ const StoryItem = ({ step, index }: { step: StoryStep; index: number }) => {
         <h3 className="text-3xl md:text-4xl font-bold">{step.title}</h3>
         <p className="text-lg text-gray-600 leading-relaxed">{step.text}</p>
       </div>
-      <div className="flex-1 w-full aspect-4/3 relative overflow-hidden rounded-[2rem]">
+      <div className="flex-1 w-full aspect-5/3 relative overflow-hidden rounded-[2rem]">
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.7 }}
