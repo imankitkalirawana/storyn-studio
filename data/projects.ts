@@ -24,7 +24,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Cargex | LCL Shipping & Logistics SaaS Platform",
     category: "Saas Dashboard",
-    thumbnail: "/assets/projects/cargex.png",
+    thumbnail: "/assets/projects/cargex.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Cargex",
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Prvaha- Hospital Management System",
     category: "HMS Dashbaord",
-    thumbnail: "/assets/projects/prvaha.png",
+    thumbnail: "/assets/projects/prvaha.webp",
     height: "h-64",
     details: {
       client: "Prvaha Labs",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Prvaha Brand identity",
     category: "Brand Identity",
-    thumbnail: "/assets/projects/prvaha-branding.png",
+    thumbnail: "/assets/projects/prvaha-branding.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Prvaha Labs",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Aspira",
     category: "UI/UX",
-    thumbnail: "/assets/projects/aspira.png",
+    thumbnail: "/assets/projects/aspira.webp",
     height: "h-64 md:h-64",
     details: {
       client: "Aspira",
@@ -120,8 +120,8 @@ export const projects: Project[] = [
     id: 5,
     title: "Calmify",
     category: "UI/UX",
-    thumbnail: "/assets/projects/calmify.png",
-    height: "h-64 md:h-64",
+    thumbnail: "/assets/projects/calmify.webp",
+    height: "h-64 md:h-96",
     details: {
       client: "Calmify",
       role: "UI/UX Design, App Architecture, Emotional Design",
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     id: 6,
     title: "Fundflux",
     category: "Web Design",
-    thumbnail: "/assets/projects/fundflux.png",
+    thumbnail: "/assets/projects/fundflux.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Fundflux",
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     id: 7,
     title: "Sundrop Brand Identity",
     category: "Brand Identity",
-    thumbnail: "/assets/projects/sundrop.png",
+    thumbnail: "/assets/projects/sundrop.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Sundrop",
@@ -192,7 +192,7 @@ export const projects: Project[] = [
     id: 8,
     title: "Talentrix",
     category: "Brand Identity",
-    thumbnail: "/assets/projects/talentrix.png",
+    thumbnail: "/assets/projects/talentrix.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Talentrix",

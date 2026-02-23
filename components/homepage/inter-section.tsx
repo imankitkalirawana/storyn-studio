@@ -159,6 +159,7 @@ export const Intersection = () => {
                     src={activeSkillData.image || ""}
                     alt={activeSkillData.label}
                     className="w-full h-full object-cover rounded-xl shadow-2xl rotate-[-5deg] border-4 border-white"
+                    fill
                   />
                   {/* Decorative floating elements */}
                   <div

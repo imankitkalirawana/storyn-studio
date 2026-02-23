@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { SpikyCircle } from "./stickers";
 import { useRef } from "react";
+import { Button } from "@heroui/react";
 
 export default function AboutUs() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,13 +17,13 @@ export default function AboutUs() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center max-w-7xl">
           {/* Music Card */}
           <motion.div
-            className="bg-white rounded-3xl p-4 flex flex-col gap-4 max-w-xs mx-auto md:mx-0 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100"
+            className="bg-background rounded-3xl p-4 flex flex-col gap-4 max-w-xs mx-auto md:mx-0 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
             dragConstraints={containerRef}
           >
-            <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-gray-100">
+            <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-default/10">
               <Image
                 src="https://images.unsplash.com/photo-1741335661678-d6df6ef05ae7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHBzeWNoZWRlbGljJTIwY29sb3JmdWwlMjBhbGJ1bSUyMGFydHxlbnwxfHx8fDE3NzAwMjU1NDN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Album Art"
@@ -33,22 +34,22 @@ export default function AboutUs() {
             </div>
             <div className="flex justify-between items-center">
               <div>
-                <h3 className="font-bold text-lg leading-none mb-1 text-black">
+                <h3 className="font-bold text-lg leading-none mb-1 text-foreground">
                   &apos;26 Design Mix
                 </h3>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-muted font-medium">
                   Deep focus & creative flows
                 </p>
               </div>
-              <button className="bg-black text-white px-4 py-2 rounded-full flex items-center gap-1 font-bold text-sm hover:bg-gray-800 transition-colors">
+              <Button className="bg-foreground text-background">
                 Play <Play size={14} fill="currentColor" />
-              </button>
+              </Button>
             </div>
           </motion.div>
 
           {/* Description Text */}
           <motion.div
-            className="text-center text-xl md:text-2xl font-medium text-gray-500 leading-relaxed px-4"
+            className="text-center text-xl md:text-2xl font-medium text-default-500 leading-relaxed px-4"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -62,7 +63,7 @@ export default function AboutUs() {
                 Unforgettable.
               </span>
               <br />
-              <span className="text-sm text-gray-400 mt-4 block">
+              <span className="text-sm text-muted mt-4 block">
                 Based in Gurugram · Digital & Chill
               </span>
             </p>
