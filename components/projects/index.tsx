@@ -47,16 +47,14 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
   return (
     <div className="bg-white min-h-screen text-black font-sans selection:bg-black selection:text-white">
       {/* Navigation / Back Button - Sticky & Blended */}
-      <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center mix-blend-difference text-white">
-        <Link
-          href="/"
-          className="group flex items-center gap-3 text-sm font-bold uppercase tracking-widest hover:opacity-70 transition-opacity"
+      <nav className="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center text-white">
+        <Button
+          onClick={() => router.back()}
+          className="group flex items-center bg-background/50 backdrop-blur-sm gap-3 text-sm font-bold uppercase tracking-widest hover:bg-background/70 transition-all"
         >
-          <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-            <ArrowLeft size={14} />
-          </div>
+          <ArrowLeft size={18} />
           <span className="hidden md:inline">Back</span>
-        </Link>
+        </Button>
         <div className="text-sm font-bold uppercase tracking-widest opacity-0 md:opacity-100 transition-opacity">
           Storyn Studio
         </div>
@@ -64,15 +62,15 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
       </nav>
 
       {/* Hero Section */}
-      <div className="w-full h-screen relative overflow-hidden">
+      <div className="w-full h-[50vh] md:h-screen relative overflow-hidden ">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
-          className="w-full h-full"
+          className="w-full md:h-full h-[100px]"
         >
           <Image
             src={project.thumbnail}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             fill
           />
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
@@ -95,7 +93,7 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
                     2024
                   </span>
                 </div>
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none -ml-1 md:-ml-2">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none md:leading-snug -ml-1 md:-ml-2">
                   {project.title}
                 </h1>
               </div>
@@ -188,8 +186,8 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
           />
         </div>
         {/* Insight Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-32 p-8 md:p-16 bg-gray-50 rounded-[3rem]">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-24  md:mb-32 p-8 md:p-16 bg-gray-50 rounded-[3rem]">
+          <div className="md:space-y-6 space-y-2">
             <h3 className="text-4xl font-bold tracking-tight">The Insight</h3>
             <div className="w-12 h-1 bg-black" />
           </div>

@@ -121,7 +121,7 @@ export const projects: Project[] = [
     title: "Calmify",
     category: "UI/UX",
     thumbnail: "/assets/projects/calmify.webp",
-    height: "h-64 md:h-96",
+    height: "h-64",
     details: {
       client: "Calmify",
       role: "UI/UX Design, App Architecture, Emotional Design",
