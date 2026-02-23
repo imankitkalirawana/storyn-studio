@@ -2,7 +2,7 @@ export type Project = {
   id: number;
   title: string;
   category: string;
-  img: string;
+  thumbnail: string;
   height: string;
   details: {
     client: string;
@@ -12,6 +12,7 @@ export type Project = {
       column1?: string;
       column2?: string;
     };
+    image: string;
     insights: string;
     name: string;
     designation: string;
@@ -23,7 +24,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Cargex | LCL Shipping & Logistics SaaS Platform",
     category: "Saas Dashboard",
-    img: "/assets/projects/cargex.png",
+    thumbnail: "/assets/projects/cargex.png",
     height: "h-64 md:h-72",
     details: {
       client: "Cargex",
@@ -36,6 +37,7 @@ export const projects: Project[] = [
         column2:
           "We realized the biggest bottleneck for new exporters wasn't finding cargo space—it was trusting the person selling it. By designing the UI to elevate 'verified partner' trust signals and radically simplifying the checkout flow, we shifted the user's emotional state from defensive skepticism to confident action.",
       },
+      image: "/projects/Cargex.webp",
       insights:
         "We realized the biggest bottleneck for new exporters wasn't finding cargo space—it was trusting the person selling it. By designing the UI to elevate 'verified partner' trust signals and radically simplifying the checkout flow, we shifted the user's emotional state from defensive skepticism to confident action.",
       name: "Nitin Prajapati",
@@ -46,7 +48,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Prvaha- Hospital Management System",
     category: "HMS Dashbaord",
-    img: "/assets/projects/prvaha.png",
+    thumbnail: "/assets/projects/prvaha.png",
     height: "h-64",
     details: {
       client: "Prvaha Labs",
@@ -59,6 +61,7 @@ export const projects: Project[] = [
         column2:
           "The result is a dashboard that lives up to its name. By prioritizingintuitive navigation and real-time data visualization, we transformed dense metrics into a lucid stream of insights. Prvaha empowers technicians to move from raw samples to critical decisions without hesitation, restoring the rhythm of the lab.",
       },
+      image: "/projects/Prvaha.webp",
       insights:
         "We discovered that 'alert fatigue' was the enemy of accuracy. By redesigning the notification hierarchy, we ensured that critical anomalies visually 'pulse' to the surface, while routine data flows quietly in the background—reducing   cognitive load by nearly half.",
       name: "Nitin Prajapati",
@@ -69,7 +72,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Prvaha Brand identity",
     category: "Brand Identity",
-    img: "/assets/projects/prvaha-branding.png",
+    thumbnail: "/assets/projects/prvaha-branding.png",
     height: "h-64 md:h-72",
     details: {
       client: "Prvaha Labs",
@@ -82,6 +85,7 @@ export const projects: Project[] = [
         column2:
           " The result is an identity system anchored entirely in the concept of itsnamesake: Flow. We discarded cliché medical tropes—like crosses and DNA strands—in favor of a continuous, fluid design language. From the geometry of the logo to the high-contrast, authoritative color palette, every brand asset is engineered to project clarity, momentum, and absolute precision..",
       },
+      image: "/projects/Prvaha-Branding.webp",
       insights:
         "Lab directors are inherently skeptical of 'disruptive tech' that looks too playful. We realized that by anchoring the brand's visual weight in typography traditionally found in scientific journals, we established immediate, subconscious credibility before they ever saw the software in action.",
       name: "Nitin Prajapati",
@@ -92,7 +96,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Aspira",
     category: "UI/UX",
-    img: "/assets/projects/aspira.png",
+    thumbnail: "/assets/projects/aspira.png",
     height: "h-64 md:h-64",
     details: {
       client: "Aspira",
@@ -105,6 +109,7 @@ export const projects: Project[] = [
         column2:
           "The result is an ecosystem that prioritizes connection over content. By weaving mentorship and community validation directly into the user flow, wetransformed a lonely, intimidating process into a shared journey. Aspira doesn't just provide answers; it builds the confidence required to ask the right questions. result is a platform that feels like a trusted mentor, guiding users through the entire startup journey with empathy and clarity. From idea validation to MVP launch, Aspira provides the structure and support needed to turn passion into profit.",
       },
+      image: "/projects/Aspira.webp",
       insights:
         "We found that 'what do I do next?' is a paralyzed state for early founders. We replaced the standard dashboard with a milestone-based navigation system, reducing decision fatigue by focusing the user on one achievable victory at a time.",
       name: "Nitin Prajapati",
@@ -115,8 +120,8 @@ export const projects: Project[] = [
     id: 5,
     title: "Calmify",
     category: "UI/UX",
-    img: "/assets/projects/calmify.png",
-    height: "h-64 md:h-96",
+    thumbnail: "/assets/projects/calmify.png",
+    height: "h-64 md:h-64",
     details: {
       client: "Calmify",
       role: "UI/UX Design, App Architecture, Emotional Design",
@@ -128,6 +133,7 @@ export const projects: Project[] = [
         column2:
           "The result is a digital environment that feels like a sanctuary rather than software. The app instantly translates voice entries into personalized, actionable relief, while a carefully architected community feature connects users based on shared triggers. Calmify doesn't just track stress; it actively absorbs it, transforming isolation into a guided, shared journey. result is an ecosystem that prioritizes connection over content. By weaving mentorship and community validation directly into the user flow, wetransformed a lonely, intimidating process into a shared journey. Aspira doesn't just provide answers; it builds the confidence required to ask the right questions. result is a platform that feels like a trusted mentor, guiding users through the entire startup journey with empathy and clarity. From idea validation to MVP launch, Aspira provides the structure and support needed to turn passion into profit.",
       },
+      image: "/projects/Calmify.webp",
       insights:
         "We discovered that 'blank page anxiety' prevents people from journaling exactly when they need it most. By designing a voice-first interface, we removed the physical barrier to entry—allowing users to vent freely while the system quietly does the heavy lifting of figuring out what they need next. found that 'what do I do next?' is a paralyzed state for early founders. We replaced the standard dashboard with a milestone-based navigation system, reducing decision fatigue by focusing the user on one achievable victory at a time.",
       name: "Nitin Prajapati",
@@ -138,7 +144,7 @@ export const projects: Project[] = [
     id: 6,
     title: "Fundflux",
     category: "Web Design",
-    img: "/assets/projects/fundflux.png",
+    thumbnail: "/assets/projects/fundflux.png",
     height: "h-64 md:h-72",
     details: {
       client: "Fundflux",
@@ -151,6 +157,7 @@ export const projects: Project[] = [
         column2:
           "The result is an eThe result is a vibrant, high-contrast dashboard that never sacrifices utility for aesthetics. By utilizing bold, modern UI patterns, we transformed the typically stressful act of tracking expenses into an intuitive, empowering daily habit. It’s financial literacy disguised as exceptional design.cosystem that prioritizes connection over content. By weaving mentorship and community validation directly into the user flow, wetransformed a lonely, intimidating process into a shared journey. Aspira doesn't just provide answers; it builds the confidence required to ask the right questions. result is a platform that feels like a trusted mentor, guiding users through the entire startup journey with empathy and clarity. From idea validation to MVP launch, Aspira provides the structure and support needed to turn passion into profit.",
       },
+      image: "/projects/Fundflux.webp",
       insights:
         "We realized that 'gamifying' finance can actually erode trust. Instead of making money look like a game, we used bold color systems strictly for cognitivehierarchy—allowing users to instantly distinguish between 'safe to spend' and'needs attention' with zero friction.",
       name: "Nitin Prajapati",
@@ -161,7 +168,7 @@ export const projects: Project[] = [
     id: 7,
     title: "Sundrop Brand Identity",
     category: "Brand Identity",
-    img: "/assets/projects/sundrop.png",
+    thumbnail: "/assets/projects/sundrop.png",
     height: "h-64 md:h-72",
     details: {
       client: "Sundrop",
@@ -174,6 +181,7 @@ export const projects: Project[] = [
         column2:
           "The result is a revitalized brand system that feels simultaneously familiar and completely new. By cleaning up the typography, refining the brand assets into a more intentional, minimal style, and introducing a color palette that breathes, we shifted the visual narrative from heavy processing to clean energy.  It’s a design that looks as healthy as the product claims to be.",
       },
+      image: "/projects/Sundrop.webp",
       insights:
         "We realized that modern consumers subconsciously associate visual clutter with artificial ingredients. By drastically increasing the negative space on the packaging and flattening the design elements, we communicated a 'purer' product before the nutritional label is even read.We realized that 'gamifying' finance can actually erode trust. Instead of making money look like a game, we used bold color systems strictly for cognitivehierarchy—allowing users to instantly distinguish between 'safe to spend' and'needs attention' with zero friction.",
       name: "Nitin Prajapati",
@@ -184,7 +192,7 @@ export const projects: Project[] = [
     id: 8,
     title: "Talentrix",
     category: "Brand Identity",
-    img: "/assets/projects/talentrix.png",
+    thumbnail: "/assets/projects/talentrix.png",
     height: "h-64 md:h-72",
     details: {
       client: "Talentrix",
@@ -197,6 +205,7 @@ export const projects: Project[] = [
         column2:
           "The result is a dynamic identity system built on pathways. We rejected static shapes for rotated, modular forms that suggest movement and convergence.The central diamond in the logo isn't just decoration—it is the visual anchor whereraw skill and real-world opportunity finally collide.",
       },
+      image: "/projects/Talentrix.webp",
       insights:
         "We realized that modern career paths are rarely straight lines. By rotating the modular forms, we visually validated the pivoting, winding journeys of students—turning their uncertainty into the brand's most defining feature.",
       name: "Nitin Prajapati",

@@ -13,7 +13,7 @@ export default function AboutUs() {
         ref={containerRef}
         className="relative w-full flex  items-center justify-center overflow-hidden px-4 py-12"
       >
-        <div className="w-full mt-20 grid grid-cols-1 md:grid-cols-3 gap-20 items-center max-w-7xl">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-20 items-center max-w-7xl">
           {/* Music Card */}
           <motion.div
             className="bg-white rounded-3xl p-4 flex flex-col gap-4 max-w-xs mx-auto md:mx-0 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-100"

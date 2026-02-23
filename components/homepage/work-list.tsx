@@ -46,11 +46,11 @@ export const WorkList = () => {
     <section
       id="work"
       ref={containerRef}
-      className="py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
+      className="py-12 md:py-24 px-4 md:px-8 overflow-hidden min-h-[150vh]"
     >
       <div className="max-w-[1920px] mx-auto">
         {/* Header */}
-        <div className="flex flex-col items-center justify-center mb-24 text-center">
+        <div className="flex flex-col items-center justify-center md:mb-24 mb-12 text-center">
           <h2 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85]">
             Selected <br />
             <span className="text-default">Work</span>
@@ -113,7 +113,7 @@ const Card = ({ project }: { project: Project }) => {
         className={`relative group w-full ${project.height} rounded-[2rem] overflow-hidden`}
       >
         <Image
-          src={project.img}
+          src={project.thumbnail}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           fill

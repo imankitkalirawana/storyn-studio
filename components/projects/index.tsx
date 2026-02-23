@@ -11,7 +11,7 @@ interface Project {
   id: number;
   title: string;
   category: string;
-  img: string;
+  thumbnail: string;
   height: string;
   details: {
     client: string;
@@ -21,6 +21,7 @@ interface Project {
       column1?: string;
       column2?: string;
     };
+    image: string;
     insights: string;
     name: string;
     designation: string;
@@ -63,13 +64,13 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
       </nav>
 
       {/* Hero Section */}
-      <div className="w-full h-screen  relative overflow-hidden">
+      <div className="w-full h-screen relative overflow-hidden">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
           className="w-full h-full"
         >
           <Image
-            src={project.img}
+            src={project.thumbnail}
             alt={project.title}
             className="w-full h-full object-cover"
             fill
@@ -94,7 +95,7 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
                     2024
                   </span>
                 </div>
-                <h1 className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] -ml-1 md:-ml-2">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none -ml-1 md:-ml-2">
                   {project.title}
                 </h1>
               </div>
@@ -177,6 +178,15 @@ export const CaseStudy: React.FC<CaseStudyProps> = ({ project }) => {
           </div>
         </div>
 
+        <div className="relative flex">
+          <Image
+            src={project.details.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+            width={1000}
+            height={1000}
+          />
+        </div>
         {/* Insight Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-32 p-8 md:p-16 bg-gray-50 rounded-[3rem]">
           <div className="space-y-6">
