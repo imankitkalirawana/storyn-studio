@@ -53,11 +53,11 @@ export const Footer = () => {
             Address
           </h3>
           <p className="text-lg text-background/70">
-            152 Flinders Lane
+            Gurugram
             <br />
-            Melbourne VIC 3000
+            Haryana
             <br />
-            Australia
+            India
           </p>
         </div>
       </div>
