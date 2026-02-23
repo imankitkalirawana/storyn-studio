@@ -26,23 +26,23 @@ const storySteps: StoryStep[] = [
 const team: TeamMember[] = [
   {
     name: "Ankit Kalirawana",
-    role: "pCo-Founder",
-    img: "/assets/ankit.jpg",
+    role: "Co-Founder",
+    img: "/assets/ankit.webp",
   },
   {
-    name: "Marcus Chen",
-    role: "Lead Developer",
-    img: "https://images.unsplash.com/photo-1735663202660-1a44d63ae163?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0JTIwbWluaW1hbGlzdCUyMHN0dWRpbyUyMGxpZ2h0aW5nJTIwbWFufGVufDF8fHx8MTc3MDAzMDU3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Nitin Kumar",
+    role: "Son of Co-Founder",
+    img: "/assets/nitin.webp",
   },
   {
-    name: "Sarah Jenkins",
-    role: "Brand Strategist",
-    img: "https://images.unsplash.com/photo-1742473716788-72ec6df8a830?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0JTIwd29tYW4lMjBibGFjayUyMGFuZCUyMHdoaXRlJTIwb3IlMjBtaW5pbWFsfGVufDF8fHx8MTc3MDAzMDU3OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Chhavi Paliwal",
+    role: "Jaan of Co-Founder",
+    img: "/assets/chhavi.webp",
   },
   {
-    name: "David Ross",
-    role: "Motion Designer",
-    img: "https://images.unsplash.com/photo-1750390200293-92d5a788d3a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHByb2Zlc3Npb25hbCUyMHBvcnRyYWl0JTIwbWFuJTIwZ2xhc3NlcyUyMG1pbmltYWx8ZW58MXx8fHwxNzcwMDMwNTc4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    name: "Vanshita",
+    role: "Wife of Co-Founder's Son",
+    img: "/assets/vanshita.webp",
   },
 ];
 
