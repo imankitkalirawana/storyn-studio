@@ -329,7 +329,9 @@ export default function NotFound() {
 
     // Apply Camera Shake
     if (state.cameraShake > 0) {
+      // eslint-disable-next-line react-hooks/purity
       const dx = (Math.random() - 0.5) * state.cameraShake;
+      // eslint-disable-next-line react-hooks/purity
       const dy = (Math.random() - 0.5) * state.cameraShake;
       ctx.translate(dx, dy);
     }
