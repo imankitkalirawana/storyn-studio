@@ -21,7 +21,7 @@ export const Hero = () => {
         dragConstraints={containerRef}
       >
         <Image
-          src="/hero(2).png"
+          src="/hero-left.webp"
           alt="Graffiti"
           fill
           className="object-cover"
@@ -45,7 +45,12 @@ export const Hero = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         dragConstraints={containerRef}
       >
-        <Image src="/hero.jpg" alt="Urban" fill className="object-cover" />
+        <Image
+          src="/hero-right.webp"
+          alt="Urban"
+          fill
+          className="object-cover"
+        />
       </motion.div>
 
       {/* FLOWER BUTTON - smaller on mobile */}

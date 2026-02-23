@@ -98,8 +98,8 @@ export const Testimonials = () => {
       <div className="mb-24 px-6 md:px-12 flex items-end justify-between max-w-[1920px] mx-auto">
         <div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
-            Trusted by <br />
-            <span className="text-gray-300">Visionaries.</span>
+            Behind the <br />
+            <span className="text-default">Scenes.</span>
           </h2>
         </div>
       </div>

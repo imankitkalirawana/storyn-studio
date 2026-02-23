@@ -23,7 +23,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Cargex | LCL Shipping & Logistics SaaS Platform",
     category: "Saas Dashboard",
-    img: "/assets/projects/cargex.png",
+    img: "/assets/projects/cargex.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Cargex",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Prvaha- Hospital Management System",
     category: "HMS Dashbaord",
-    img: "/assets/projects/prvaha.png",
+    img: "/assets/projects/prvaha.webp",
     height: "h-64",
     details: {
       client: "Prvaha Labs",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Prvaha Brand identity",
     category: "Brand Identity",
-    img: "/assets/projects/prvaha-branding.png",
+    img: "/assets/projects/prvaha-branding.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Prvaha Labs",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Aspira",
     category: "UI/UX",
-    img: "/assets/projects/aspira.png",
+    img: "/assets/projects/aspira.webp",
     height: "h-64 md:h-64",
     details: {
       client: "Aspira",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
     id: 5,
     title: "Calmify",
     category: "UI/UX",
-    img: "/assets/projects/calmify.png",
+    img: "/assets/projects/calmify.webp",
     height: "h-64 md:h-96",
     details: {
       client: "Calmify",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
     id: 6,
     title: "Fundflux",
     category: "Web Design",
-    img: "/assets/projects/fundflux.png",
+    img: "/assets/projects/fundflux.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Fundflux",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
     id: 7,
     title: "Sundrop Brand Identity",
     category: "Brand Identity",
-    img: "/assets/projects/sundrop.png",
+    img: "/assets/projects/sundrop.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Sundrop",
@@ -184,7 +184,7 @@ export const projects: Project[] = [
     id: 8,
     title: "Talentrix",
     category: "Brand Identity",
-    img: "/assets/projects/talentrix.png",
+    img: "/assets/projects/talentrix.webp",
     height: "h-64 md:h-72",
     details: {
       client: "Talentrix",
