@@ -12,44 +12,14 @@ import {
 import { wrap } from "@motionone/utils";
 import { Star } from "lucide-react";
 import Image from "next/image";
-
-const testimonials = [
-  {
-    id: 1,
-    text: "The level of detail is unmatched.",
-    author: "Alex V.",
-    role: "Neo Tokyo",
-    img: "https://images.unsplash.com/photo-1585002152390-cc9fa648e268?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFydHVwJTIwZm91bmRlciUyMHBvcnRyYWl0JTIwcmVsYXhlZCUyMGF1dGhlbnRpY3xlbnwxfHx8fDE3NzEyNDY3NzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 2,
-    text: "Pure creativity and a relentless pursuit of perfection.",
-    author: "Sarah J.",
-    role: "Vogue Ed.",
-    img: "https://images.unsplash.com/photo-1625864667443-bc321825fcce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdCUyMGNyZWF0aXZlJTIwZGlyZWN0b3IlMjBtaW5pbWFsaXN0fGVufDF8fHx8MTc3MTI0Njc3M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 3,
-    text: "Storyn makes minimalism feel full of emotion.",
-    author: "David K.",
-    role: "Eco Pack",
-    img: "https://images.unsplash.com/photo-1543320485-d0d5a49c2b2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkZXNpZ24lMjBzdHVkaW8lMjB0ZWFtJTIwbWVldGluZyUyMGNyZWF0aXZlJTIwbWluaW1hbGlzdCUyMHdoaXRlfGVufDF8fHx8MTc3MDAzMDU3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-  {
-    id: 4,
-    text: "A masterclass in digital storytelling.",
-    author: "Elena R.",
-    role: "Lumina",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwb3J0cmFpdCUyMHdvbWFuJTIwYXJ0aXN0aWN8ZW58MXx8fHwxNzcxMjQ2ODkxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-  },
-];
+import { bts } from "@/data/bts";
 
 interface ParallaxProps {
   children: React.ReactNode;
   baseVelocity: number;
 }
 
-function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
+function ParallaxText({ children, baseVelocity = 50 }: ParallaxProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -92,9 +62,9 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   );
 }
 
-export const Testimonials = () => {
+export const BehindTheScenes = () => {
   return (
-    <section className="pb-32 overflow-hidden border-t border-gray-100">
+    <section className="pb-32 overflow-hidden border-t border-border/50">
       <div className="mb-24 px-6 md:px-12 flex items-end justify-between max-w-[1920px] mx-auto">
         <div>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
@@ -106,17 +76,17 @@ export const Testimonials = () => {
 
       <div className="flex flex-col gap-8 md:gap-12 relative">
         {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-white to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-background to-transparent z-10 pointer-events-none" />
 
-        <ParallaxText baseVelocity={-2}>
-          {testimonials.map((t, i) => (
+        <ParallaxText baseVelocity={-1}>
+          {bts.map((t, i) => (
             <ReviewCard key={`r1-${i}`} data={t} />
           ))}
         </ParallaxText>
 
-        <ParallaxText baseVelocity={2}>
-          {testimonials.map((t, i) => (
+        <ParallaxText baseVelocity={1}>
+          {bts.map((t, i) => (
             <ReviewCard key={`r2-${i}`} data={t} isDark />
           ))}
         </ParallaxText>
