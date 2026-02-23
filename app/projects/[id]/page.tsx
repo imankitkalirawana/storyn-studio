@@ -21,16 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description:
       description ?? `Case study: ${project.title}. ${project.details.role}.`,
     path: `/projects/${id}`,
-    image: project.img,
+    image: project.thumbnail,
     openGraphType: "article",
   });
 }
 
 function projectJsonLd(project: (typeof projects)[0], id: string) {
   const url = `${seoConfig.baseUrl}/projects/${id}`;
-  const image = project.img.startsWith("http")
-    ? project.img
-    : `${seoConfig.baseUrl}${project.img}`;
+  const image = project.thumbnail.startsWith("http")
+    ? project.thumbnail
+    : `${seoConfig.baseUrl}${project.thumbnail}`;
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",

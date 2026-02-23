@@ -453,7 +453,7 @@ export default function NotFound() {
   }, [gameStarted, gameOver]);
 
   return (
-    <div className="fixed inset-0 z-[100] bg-neutral-50 text-black font-sans cursor-crosshair overflow-hidden">
+    <div className="fixed inset-0 z-100 bg-neutral-50 text-black font-sans cursor-crosshair overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-full" />
 
       {/* UI Overlay */}
