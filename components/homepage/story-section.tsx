@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 
 type StoryStep = { title: string; text: string; img: string };
-type TeamMember = { name: string; role: string; img: string };
+type TeamMember = { name: string; role: string; img: string; link: string };
 
 const storySteps: StoryStep[] = [
   {
@@ -26,29 +26,38 @@ const storySteps: StoryStep[] = [
 const team: TeamMember[] = [
   {
     name: "Ankit Kalirawana",
-    role: "Co-Founder",
+    role: "Backend Developer",
     img: "/assets/ankit.webp",
+    link: "https://www.linkedin.com/in/divinelydeveloper/",
   },
   {
     name: "Nitin Kumar",
-    role: "Son of Co-Founder",
+    role: "Product Designer",
     img: "/assets/nitin.webp",
-  },
-  {
-    name: "Chhavi Paliwal",
-    role: "Jaan of Co-Founder",
-    img: "/assets/chhavi.webp",
+    link: "https://www.linkedin.com/in/nitin-k-975b68262/",
   },
   {
     name: "Vanshita",
-    role: "Wife of Co-Founder's Son",
+    role: "Creative Director",
     img: "/assets/vanshita.webp",
+    link: "https://www.linkedin.com/in/vanshita-karwani-08090722b/",
+  },
+  {
+    name: "Chhavi Paliwal",
+    role: "Frontend Developer",
+    img: "/assets/chhavi.webp",
+    link: "https://www.linkedin.com/in/chhavipaliwal/",
   },
 ];
 
+const shuffledTeam = [...team].sort(() => Math.random() - 0.5);
+
 export const StorySection = () => {
   return (
-    <section className="bg-white text-black py-32 relative" id="about-us">
+    <section
+      className="bg-background text-foreground py-32 relative"
+      id="about-us"
+    >
       <div className="max-w-[1920px] mx-auto px-4 md:px-12">
         {/* Intro Text */}
         <div className="mb-32 max-w-4xl">
@@ -64,7 +73,7 @@ export const StorySection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-500 leading-relaxed font-serif italic"
+            className="text-xl md:text-2xl text-default leading-relaxed font-serif italic"
           >
             &quot;A story is not just what you tell people. It&apos;s what they
             believe about you based on the signals your brand sends.&quot;
@@ -100,7 +109,7 @@ export const StorySection = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {team.map((member, i) => (
+            {shuffledTeam.map((member, i) => (
               <TeamCard key={i} member={member} index={i} />
             ))}
           </div>
@@ -146,6 +155,7 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ margin: "-50px" }}
       className="group cursor-pointer"
+      onClick={() => window.open(member.link, "_blank")}
     >
       <div className="relative overflow-hidden rounded-[2rem] mb-6 aspect-3/4 bg-gray-100">
         <Image
