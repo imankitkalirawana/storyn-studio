@@ -43,12 +43,14 @@ export const Navigation = () => {
             : "bg-transparent"
         }`}
       >
-        <Image
-          src="/assets/logo.png"
-          alt="Storyn Studio"
-          width={200}
-          height={34}
-        ></Image>
+        <Link href="/">
+          <Image
+            src="/assets/logo.png"
+            alt="Storyn Studio"
+            width={200}
+            height={34}
+          />
+        </Link>
 
         {/* Desktop */}
         <div className="flex items-center gap-12">

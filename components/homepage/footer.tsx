@@ -19,12 +19,12 @@ export const Footer = () => {
             Contact
           </h3>
           <a
-            href="mailto:hello@storyn.com"
+            href="mailto:hello@storynstudio.in"
             className="text-2xl md:text-3xl hover:text-default-hover transition-colors block mb-2"
           >
-            hello@storyn.com
+            hello@storynstudio.in
           </a>
-          <p className="text-lg text-background/70">+61 3 9999 9999</p>
+          <p className="text-lg text-background/70">+91 8827593448</p>
         </div>
 
         <div>
@@ -53,11 +53,11 @@ export const Footer = () => {
             Address
           </h3>
           <p className="text-lg text-background/70">
-            152 Flinders Lane
+            Gurugram
             <br />
-            Melbourne VIC 3000
+            Haryana
             <br />
-            Australia
+            India
           </p>
         </div>
       </div>
