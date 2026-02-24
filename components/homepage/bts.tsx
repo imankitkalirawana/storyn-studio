@@ -65,11 +65,11 @@ function ParallaxText({ children, baseVelocity = 50 }: ParallaxProps) {
 export const BehindTheScenes = () => {
   return (
     <section className="pb-32 overflow-hidden border-t border-border/50">
-      <div className="mb-24 px-6 md:px-12 py-6 flex items-end justify-between max-w-[1920px] mx-auto">
+      <div className="md:mb-24 mb-6 px-6 md:px-12 py-6 flex items-end justify-between max-w-[1920px] mx-auto">
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
+          <h2 className="text-4xl md:text-6xl text-default font-bold tracking-tighter">
             Behind the <br />
-            <span className="text-default">Scenes.</span>
+            <span className=" text-black">Scenes.</span>
           </h2>
         </div>
       </div>
@@ -87,7 +87,7 @@ export const BehindTheScenes = () => {
 
         <ParallaxText baseVelocity={1}>
           {bts.map((t, i) => (
-            <ReviewCard key={`r2-${i}`} data={t} isDark />
+            <ReviewCard key={`r2-${i}`} data={t} />
           ))}
         </ParallaxText>
       </div>
@@ -97,7 +97,6 @@ export const BehindTheScenes = () => {
 
 const ReviewCard = ({
   data,
-  isDark = false,
 }: {
   data: {
     id: number;
@@ -106,64 +105,18 @@ const ReviewCard = ({
     role: string;
     img: string;
   };
-  isDark?: boolean;
 }) => {
   return (
     <div
-      className={`
-      relative group
-      w-[300px] md:w-[400px] 
-      shrink-0 
-      p-6 md:p-8 rounded-[2rem] 
-      ${isDark ? "bg-black text-white" : "bg-gray-100 text-black"}
-      transition-all duration-500
-      hover:scale-[1.02]
-      cursor-pointer
-      whitespace-normal
-    `}
+      className={`relative w-[256px] md:w-[400px] aspect-video shrink-0 p-6 md:p-8 rounded-[2rem] transition-all duration-500 hover:scale-[1.02] cursor-pointer whitespace-normal`}
     >
-      <div className="flex justify-between items-start mb-6 md:mb-8">
-        <div className="flex gap-1">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              size={14}
-              className={`${isDark ? "fill-white text-white" : "fill-black text-black"}`}
-            />
-          ))}
-        </div>
-        <div
-          className={`text-[10px] md:text-xs font-bold uppercase tracking-widest ${isDark ? "text-gray-500" : "text-gray-400"}`}
-        >
-          Verified
-        </div>
-      </div>
-
-      <p className="text-lg md:text-xl font-medium leading-tight mb-6 md:mb-8 font-serif">
-        &quot;{data.text}&quot;
-      </p>
-
-      <div className="flex items-center gap-4">
-        <div
-          className={`w-10 h-10 rounded-full overflow-hidden ${isDark ? "bg-gray-800" : "bg-white"}`}
-        >
-          <Image
-            src={data.img}
-            alt={data.author}
-            className="w-full h-full rounded-4xl object-cover grayscale group-hover:grayscale-0 transition-all"
-            fill
-          />
-        </div>
-        <div>
-          <p className="text-sm font-bold uppercase tracking-wide">
-            {data.author}
-          </p>
-          <p
-            className={`text-[10px] md:text-xs uppercase tracking-widest ${isDark ? "text-gray-500" : "text-gray-500"}`}
-          >
-            {data.role}
-          </p>
-        </div>
+      <div className="rounded-full overflow-hidden">
+        <Image
+          src={data.img}
+          alt={data.author}
+          className="rounded-4xl object-cover grayscale hover:grayscale-0 transition-all"
+          fill
+        />
       </div>
     </div>
   );
