@@ -179,7 +179,7 @@ export const Intersection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-24 px-6 md:px-12 overflow-hidden select-none"
+      className="bg-white py-0 md:py-24 px-6 md:px-12 overflow-hidden select-none"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -196,7 +196,7 @@ export const Intersection = () => {
         </div>
 
         {/* Interactive Visualization */}
-        <div className="relative w-full aspect-video md:aspect-2/1 min-h-[600px] flex items-center justify-center">
+        <div className="relative w-full aspect-video md:aspect-2/1 min-h-[400px] md:min-h-[600px] flex items-center justify-center">
           {/* Axis Labels */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-black/80 z-10">
             Brand <div className="w-2 h-2 rounded-full bg-black"></div>
@@ -208,9 +208,9 @@ export const Intersection = () => {
           {/* Dashed Circles - concentric circles (same center, both round) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {/* Large circle */}
-            <div className="absolute w-[70%] aspect-square border border-dashed border-gray-300 rounded-full" />
+            <div className="absolute w-[70%] md:w-[80%] md:h-[120%]  aspect-square border border-dashed border-gray-300 rounded-full md:rounded-[50%] md:absolute" />
             {/* Inner circle */}
-            <div className="absolute w-[42%] aspect-square border border-dashed border-gray-300 rounded-full" />
+            <div className=" md:w-[50%] md:h-[80%] md:rounded-[50%] absolute w-[42%] aspect-square border border-dashed border-gray-300 rounded-full" />
             {/* Center Line */}
             <div className="w-full h-px border-t border-dashed border-gray-200 absolute top-1/2 left-0" />
           </div>
