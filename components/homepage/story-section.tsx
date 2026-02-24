@@ -81,7 +81,7 @@ export const StorySection = () => {
         </div>
 
         {/* Narrative Flow */}
-        <div className="flex flex-col gap-18 md:gap-18 mb-24">
+        <div className="flex flex-col gap-8 md:gap-18 mb-24">
           {storySteps.map((step, i) => (
             <StoryItem key={i} step={step} index={i} />
           ))}
