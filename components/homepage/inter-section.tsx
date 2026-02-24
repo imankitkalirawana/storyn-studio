@@ -12,8 +12,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-const SECTION_IN_VIEW_DELAY_MS = 1000;
-const MOBILE_CYCLE_DURATION_MS = 1500;
+const SECTION_IN_VIEW_DELAY_MS = 2000;
+const MOBILE_CYCLE_DURATION_MS = 3500;
 
 // Data for the bubbles
 const skills = [
@@ -208,9 +208,9 @@ export const Intersection = () => {
           {/* Dashed Circles - concentric circles (same center, both round) */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             {/* Large circle */}
-            <div className="absolute w-[70%] md:w-[80%] md:h-[120%]  aspect-square border border-dashed border-gray-300 rounded-full md:rounded-[50%] md:absolute" />
+            <div className="absolute w-full md:w-[80%] md:h-[120%]  aspect-square border border-dashed border-gray-300 rounded-full md:rounded-[50%] md:absolute" />
             {/* Inner circle */}
-            <div className=" md:w-[50%] md:h-[80%] md:rounded-[50%] absolute w-[42%] aspect-square border border-dashed border-gray-300 rounded-full" />
+            <div className=" md:w-[50%] md:h-[80%] md:rounded-[50%] absolute w-[62%] aspect-square border border-dashed border-gray-300 rounded-full" />
             {/* Center Line */}
             <div className="w-full h-px border-t border-dashed border-gray-200 absolute top-1/2 left-0" />
           </div>
@@ -238,7 +238,7 @@ export const Intersection = () => {
                     className={`absolute -right-4 -bottom-4 w-12 h-12 ${displayedSkill.color} rounded-full flex items-center justify-center text-white shadow-lg`}
                   >
                     {React.createElement(displayedSkill.icon || Palette, {
-                      size: 20,
+                      size: 30,
                     })}
                   </div>
                 </motion.div>
