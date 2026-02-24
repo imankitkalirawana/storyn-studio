@@ -34,9 +34,9 @@ export const WorkList = () => {
   );
 
   // Shuffle/Split projects for columns (desktop)
-  const col1 = [projects[0], projects[3], projects[6], projects[1]];
-  const col2 = [projects[4], projects[2], projects[7], projects[0]];
-  const col3 = [projects[5], projects[1], projects[3], projects[4]];
+  const col1 = [projects[0], projects[6], projects[1]];
+  const col2 = [projects[2], projects[7]];
+  const col3 = [projects[5], projects[3], projects[4]];
 
   const mobileInitial = projects.slice(0, MOBILE_INITIAL_COUNT);
   const mobileRest = projects.slice(MOBILE_INITIAL_COUNT);
