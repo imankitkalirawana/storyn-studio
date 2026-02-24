@@ -81,6 +81,25 @@ const skills = [
       "https://images.unsplash.com/photo-1648134859211-4a1b57575f4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBsYW5kaW5nJTIwcGFnZSUyMG1pbmltYWwlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NzAwMjQ1NzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     color: "bg-zinc-900",
   },
+
+  // Inactive Skills (Brand Side - Left)
+  { id: "printing", label: "printing services", x: 22, y: 45, active: false },
+  { id: "packaging", label: "packaging design", x: 18, y: 58, active: false },
+  { id: "pr", label: "pr campaigns", x: 15, y: 72, active: false },
+  { id: "video", label: "video productions", x: 20, y: 85, active: false },
+
+  // Inactive Skills (Product Side - Right)
+  { id: "data", label: "data science", x: 75, y: 45, active: false },
+  {
+    id: "production",
+    label: "production planning",
+    x: 82,
+    y: 58,
+    active: false,
+  },
+  { id: "gtm", label: "gtm strategy", x: 78, y: 72, active: false },
+  { id: "smm", label: "smm", x: 85, y: 72, active: false },
+  { id: "writing", label: "product writing", x: 85, y: 85, active: false },
 ];
 
 export const Intersection = () => {

@@ -39,7 +39,7 @@ const team: TeamMember[] = [
   {
     name: "Vanshita",
     role: "Creative Director",
-    img: "/assets/Vanshita.webp",
+    img: "/assets/vanshita.webp",
     link: "https://www.linkedin.com/in/vanshita-karwani-08090722b/",
   },
   // {
