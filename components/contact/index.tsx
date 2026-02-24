@@ -47,7 +47,7 @@ export default function ContactForm() {
     <section className="relative flex flex-col gap-12 font-manrope md:flex-row px-24 py-12">
       <div className="relative text-white hidden w-full overflow-hidden rounded-3xl md:block md:w-[40%]">
         <Image
-          src="/assets/Frame 2.png"
+          src="/assets/icon.png"
           alt=""
           width={600}
           height={600}

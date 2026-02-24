@@ -10,7 +10,6 @@ import {
   useAnimationFrame,
 } from "motion/react";
 import { wrap } from "@motionone/utils";
-import { Star } from "lucide-react";
 import Image from "next/image";
 import { bts } from "@/data/bts";
 
