@@ -39,7 +39,7 @@ const team: TeamMember[] = [
   {
     name: "Vanshita",
     role: "Creative Director",
-    img: "/assets/vanshita.webp",
+    img: "/assets/Vanshita.webp",
     link: "https://www.linkedin.com/in/vanshita-karwani-08090722b/",
   },
   // {
@@ -98,7 +98,7 @@ export const StorySection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex overflow-x-auto gap-6 pb-4 -mx-4 px-4 md:mx-0 md:px-0 md:overflow-visible md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 ">
             {shuffledTeam.map((member, i) => (
               <TeamCard key={i} member={member} index={i} />
             ))}
@@ -144,7 +144,7 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ margin: "-50px" }}
-      className="group cursor-pointer"
+      className="group cursor-pointer shrink-0 w-[72vw] min-w-[240px] md:w-auto md:min-w-0"
       onClick={() => window.open(member.link, "_blank")}
     >
       <div className="relative overflow-hidden rounded-[2rem] mb-6 aspect-3/4 bg-gray-100">

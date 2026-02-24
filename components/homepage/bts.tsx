@@ -65,9 +65,9 @@ function ParallaxText({ children, baseVelocity = 50 }: ParallaxProps) {
 export const BehindTheScenes = () => {
   return (
     <section className="pb-32 overflow-hidden border-t border-border/50">
-      <div className="mb-24 px-6 md:px-12 flex items-end justify-between max-w-[1920px] mx-auto">
+      <div className="mb-24 px-6 md:px-12 py-6 flex items-end justify-between max-w-[1920px] mx-auto">
         <div>
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
             Behind the <br />
             <span className="text-default">Scenes.</span>
           </h2>
