@@ -86,23 +86,33 @@ const skills = [
   },
 
   // Inactive Skills (Brand Side - Left)
-  { id: "printing", label: "printing services", x: 22, y: 45, active: false },
-  { id: "packaging", label: "packaging design", x: 18, y: 58, active: false },
-  { id: "pr", label: "pr campaigns", x: 15, y: 72, active: false },
-  { id: "video", label: "video productions", x: 20, y: 85, active: false },
+  { id: "printing", label: "Website Development", x: 22, y: 45, active: false },
+  { id: "packaging", label: "Admin Panel", x: 12, y: 58, active: false },
+  { id: "pr", label: "SaaS", x: 15, y: 72, active: false },
+
+  { id: "video", label: "Landing Page", x: 20, y: 85, active: false },
+  { id: "video", label: "E-commerce Development", x: 20, y: 26, active: false },
+  { id: "video", label: "Business Site", x: 12, y: 35, active: false },
 
   // Inactive Skills (Product Side - Right)
-  { id: "data", label: "data science", x: 75, y: 45, active: false },
+  { id: "data", label: "Logo Design", x: 75, y: 45, active: false },
   {
     id: "production",
-    label: "production planning",
+    label: "Packaging Design",
     x: 82,
     y: 58,
     active: false,
   },
-  { id: "gtm", label: "gtm strategy", x: 78, y: 72, active: false },
-  { id: "smm", label: "smm", x: 85, y: 72, active: false },
-  { id: "writing", label: "product writing", x: 85, y: 85, active: false },
+  { id: "gtm", label: "Rebranding", x: 78, y: 72, active: false },
+  { id: "smm", label: "Ad Creatives", x: 85, y: 32, active: false },
+  { id: "writing", label: "Content Production", x: 85, y: 85, active: false },
+  {
+    id: "custom-software",
+    label: "Brand Guidelines",
+    x: 75,
+    y: 22,
+    active: false,
+  },
 ];
 
 const activeSkillsList = skills.filter(
@@ -179,7 +189,7 @@ export const Intersection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-0 md:py-24 px-6 md:px-12 overflow-hidden select-none"
+      className="bg-white py-0 md:py-24 px-6 md:px-12  overflow-hidden select-none"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -199,10 +209,10 @@ export const Intersection = () => {
         <div className="relative w-full aspect-video md:aspect-2/1 min-h-[400px] md:min-h-[600px] flex items-center justify-center">
           {/* Axis Labels */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-black/80 z-10">
-            Brand <div className="w-2 h-2 rounded-full bg-black"></div>
+            Product<div className="w-2 h-2 rounded-full bg-black"></div>
           </div>
           <div className="absolute top-1/2 right-0 -translate-y-1/2 flex items-center gap-4 text-sm font-bold uppercase tracking-widest text-black/80 z-10">
-            <div className="w-2 h-2 rounded-full bg-black"></div> Product
+            <div className="w-2 h-2 rounded-full bg-black"></div> Brand
           </div>
 
           {/* Dashed Circles - concentric circles (same center, both round) */}
