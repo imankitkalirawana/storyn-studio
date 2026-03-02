@@ -20,7 +20,7 @@ const skills = [
   // Active Skills (Center Intersection)
   {
     id: "branding",
-    label: "branding",
+    label: "Social Media & Creatives",
     x: 32,
     y: 55,
     active: true,
@@ -31,7 +31,7 @@ const skills = [
   },
   {
     id: "brand-strategy",
-    label: "brand strategy",
+    label: "Brand Strategy & Identity",
     x: 28,
     y: 70,
     active: true,
@@ -42,7 +42,7 @@ const skills = [
   },
   {
     id: "web-design",
-    label: "web design",
+    label: "Growth Marketing",
     x: 38,
     y: 82,
     active: true,
@@ -64,7 +64,7 @@ const skills = [
   },
   {
     id: "app-design",
-    label: "app design",
+    label: "Product Development",
     x: 65,
     y: 55,
     active: true,
@@ -189,19 +189,19 @@ export const Intersection = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-0 md:py-24 px-6 md:px-12  overflow-hidden select-none"
+      className="bg-white py-0 md:py-24 px-6 md:px-12  overflow-hidden "
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-6 md:gap-12">
-          <h2 className="text-4xl md:text-6xl font-serif text-black max-w-xl leading-[1.1]">
+          <h2 className="text-4xl md:text-6xl font-semibold text-black max-w-2xl leading-[1]">
             At the intersection of <br />
             product and brand
           </h2>
           <p className="text-gray-600 max-w-md leading-relaxed">
-            With over 2+ years of experience, our offerings have evolved into a
-            set of services that complement each other, allowing us to design,
-            develop, and extend a consistent experience across all touchpoints.
+            Your story matters. We’re a 360° studio, with individuals bringing
+            4+ years of experience, building brands and products that grow with
+            you. Stuck somewhere? We&apos;ve got the steps to move forward.
           </p>
         </div>
 

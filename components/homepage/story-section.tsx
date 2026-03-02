@@ -9,7 +9,7 @@ const storySteps: StoryStep[] = [
   {
     title: "The Beginning",
     text: "Storyn Studio wasn't born in a boardroom. It started in a small apartment, fueled by late-night coffee and a shared obsession with perfect pixels. We realized that most digital experiences were just... noise. We wanted to create signals.",
-    img: "/data/story(1).jpeg",
+    img: "/data/beginning.webp",
   },
   {
     title: "The Process",
@@ -73,7 +73,7 @@ export const StorySection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-default leading-relaxed font-serif italic"
+            className="text-xl md:text-2xl text-gray-600 leading-relaxed  italic"
           >
             &quot;A story is not just what you tell people. It&apos;s what they
             believe about you based on the signals your brand sends.&quot;
