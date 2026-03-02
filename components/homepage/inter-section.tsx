@@ -194,7 +194,7 @@ export const Intersection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-6 md:gap-12">
-          <h2 className="text-4xl md:text-6xl font-semibold text-black max-w-2xl leading-[1]">
+          <h2 className="text-4xl md:text-6xl font-semibold text-black max-w-2xl leading-none">
             At the intersection of <br />
             product and brand
           </h2>
