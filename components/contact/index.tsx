@@ -19,7 +19,7 @@ import { ArrowLeft } from "lucide-react";
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Invalid email").required("Email is required"),
-  phone: Yup.string(),
+  phone: Yup.string().required("Phone is required"),
   message: Yup.string()
     .required("Message is required")
     .min(10, "Message must be at least 10 characters")
@@ -36,10 +36,28 @@ export default function ContactForm() {
       phone: string;
       message: string;
     }) => {
-      await new Promise((r) => setTimeout(r, 600));
-      console.log("Contact form submitted:", values);
-      toast.success("Message sent! I'll get back to you soon.");
-      formik.resetForm();
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
+        });
+
+        if (!response.ok) {
+          const data = await response.json().catch(() => null);
+          throw new Error(data?.message || "Failed to send message");
+        }
+
+        toast.success("Message sent! We'll get back to you soon.");
+        formik.resetForm();
+      } catch (error) {
+        console.error(error);
+        toast.danger(
+          error instanceof Error ? error.message : "Failed to send message",
+        );
+      }
     },
   });
 
@@ -82,7 +100,6 @@ export default function ContactForm() {
                 autoComplete="name"
                 value={formik.values.name}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 className="w-full"
               />
               <FieldError>{formik.errors.name}</FieldError>
@@ -101,7 +118,6 @@ export default function ContactForm() {
                 autoComplete="email"
                 value={formik.values.email}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 className="w-full"
               />
               <FieldError>{formik.errors.email}</FieldError>
@@ -109,17 +125,21 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label>Phone (optional)</Label>
-            <Input
-              name="phone"
-              type="tel"
-              placeholder="+1 234 567 8900"
-              autoComplete="tel"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              className="w-full"
-            />
+            <TextField
+              isInvalid={formik.touched.phone && !!formik.errors.phone}
+            >
+              <Label isRequired>Phone</Label>
+              <Input
+                name="phone"
+                type="tel"
+                placeholder="+91 9876543210"
+                autoComplete="tel"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                className="w-full"
+              />
+              <FieldError>{formik.errors.phone}</FieldError>
+            </TextField>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -133,7 +153,6 @@ export default function ContactForm() {
                 rows={4}
                 value={formik.values.message}
                 onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
                 className="w-full min-h-[120px]"
               />
               <FieldError>{formik.errors.message}</FieldError>
