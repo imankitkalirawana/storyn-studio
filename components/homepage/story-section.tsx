@@ -90,10 +90,10 @@ export const StorySection = () => {
         {/* Team Section */}
         <div className="border-t border-gray-100 md:pt-32">
           <div className="mb-16">
-            <h3 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
+            <h3 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
               The Minds
             </h3>
-            <p className="text-gray-400 max-w-md">
+            <p className="text-gray-400  text-xl md:text-2xl ">
               Meet the people who turn coffee into code and dreams into designs.
             </p>
           </div>
@@ -151,7 +151,7 @@ const TeamCard = ({ member, index }: { member: TeamMember; index: number }) => {
         <Image
           src={member.img}
           alt={member.name}
-          className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0 grayscale"
+          className="w-full h-full object-cover  transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0 grayscale"
           fill
         />
         {/* Hover overlay */}

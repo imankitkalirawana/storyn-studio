@@ -8,7 +8,7 @@ export const Footer = () => {
       className="bg-foreground text-background py-24 px-6 md:px-12 flex flex-col justify-between min-h-[80vh]"
     >
       <div>
-        <h2 className="text-6xl md:text-[10rem] font-serif leading-none tracking-tight mb-8">
+        <h2 className="text-5xl md:text-[8rem]  leading-none tracking-tight mb-8">
           Let&apos;s Talk.
         </h2>
       </div>
