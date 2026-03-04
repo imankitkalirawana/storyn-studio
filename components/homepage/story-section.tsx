@@ -93,7 +93,7 @@ export const StorySection = () => {
             <h3 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
               The Minds
             </h3>
-            <p className="text-gray-400  text-xl md:text-2xl ">
+            <p className="text-gray-600 italic  text-xl md:text-2xl ">
               Meet the people who turn coffee into code and dreams into designs.
             </p>
           </div>
