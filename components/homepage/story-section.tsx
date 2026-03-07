@@ -24,12 +24,12 @@ const storySteps: StoryStep[] = [
 ];
 
 const team: TeamMember[] = [
-  {
-    name: "Ankit Kalirawana",
-    role: "Backend Developer",
-    img: "/assets/ankit.webp",
-    link: "https://www.linkedin.com/in/divinelydeveloper/",
-  },
+  // {
+  //   name: "Ankit Kalirawana",
+  //   role: "Backend Developer",
+  //   img: "/assets/ankit.webp",
+  //   link: "https://www.linkedin.com/in/divinelydeveloper/",
+  // },
   {
     name: "Nitin Kumar",
     role: "Product Designer",
@@ -42,12 +42,12 @@ const team: TeamMember[] = [
     img: "/assets/vanshita.webp",
     link: "https://www.linkedin.com/in/vanshita-karwani-08090722b/",
   },
-  {
-    name: "Chhavi Paliwal",
-    role: "Frontend Developer",
-    img: "/assets/chhavi.jpeg",
-    link: "https://www.linkedin.com/in/chhavipaliwal/",
-  },
+  // {
+  //   name: "Chhavi Paliwal",
+  //   role: "Frontend Developer",
+  //   img: "/assets/chhavi.jpeg",
+  //   link: "https://www.linkedin.com/in/chhavipaliwal/",
+  // },
 ];
 
 const shuffledTeam = [...team].sort(() => Math.random() - 0.5);
