@@ -54,7 +54,7 @@ export default function AboutUs() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            <p>
+            <h1>
               Hi! We are{" "}
               <span className="text-black font-bold">Storyn Studio</span>.
               <br />
@@ -66,7 +66,7 @@ export default function AboutUs() {
               <span className="text-sm text-muted mt-4 block">
                 Based in Gurugram · Digital & Chill
               </span>
-            </p>
+            </h1>
           </motion.div>
 
           {/* Profile Circle */}

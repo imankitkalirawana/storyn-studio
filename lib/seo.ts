@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
 const siteName = "Storyn Studio";
-const defaultTitle = "Storyn Studio | UI/UX Design, Brand Identity & Digital Product Studio";
+const defaultTitle =
+  "Storyn Studio | UI/UX Design, Brand Identity & Digital Product Studio";
 const defaultDescription =
   "We craft digital experiences that turn ideas into signals. UI/UX design, brand identity, and product strategy for startups and enterprises.";
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://storyn.studio";
+const baseUrl = "https://storynstudio.in";
 const twitterHandle = "@storynstudio";
 
 /** Meta description length recommended by search engines (e.g. Google ~155–160). */
@@ -41,7 +41,9 @@ export function buildMetadata({
   openGraphType?: "website" | "article";
 } = {}): Metadata {
   const url = path ? absoluteUrl(path) : seoConfig.baseUrl;
-  const ogImage = image ? absoluteUrl(image) : absoluteUrl(seoConfig.ogImagePath);
+  const ogImage = image
+    ? absoluteUrl(image)
+    : absoluteUrl(seoConfig.ogImagePath);
   const fullTitle = title
     ? `${title} | ${seoConfig.siteName}`
     : seoConfig.defaultTitle;

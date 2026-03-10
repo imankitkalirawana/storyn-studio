@@ -51,7 +51,7 @@ export default function ContactForm() {
         }
 
         toast.success("Message sent! We'll get back to you soon.");
-        formik.resetForm();
+        // formik.resetForm();
       } catch (error) {
         console.error(error);
         toast.danger(
